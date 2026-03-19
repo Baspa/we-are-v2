@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState, useCallback } from 'react'
 import { Head } from '@inertiajs/react'
-import MainLayout from '@/layouts/MainLayout'
-import InlineContactForm from '@/components/InlineContactForm'
-import { CheckCircle, ArrowRight, Zap, Dumbbell, Target, Trophy, Star, ChevronLeft, ChevronRight } from 'lucide-react'
 import useEmblaCarousel from 'embla-carousel-react'
+import { CheckCircle, ArrowRight, Zap, Dumbbell, Target, Trophy, Star, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useEffect, useRef, useState, useCallback } from 'react'
+import gym1 from '@/assets/gym-1.jpg'
+import gym2 from '@/assets/gym-2.jpg'
 import retainPhoto from '@/assets/retain-photo.jpg'
 import transformation1 from '@/assets/transformation-1.jpg'
 import transformation2 from '@/assets/transformation-2.jpg'
@@ -11,19 +11,26 @@ import transformation3 from '@/assets/transformation-3.jpg'
 import transformation4 from '@/assets/transformation-4.png'
 import transformation5 from '@/assets/transformation-5.jpg'
 import transformation6 from '@/assets/transformation-6.jpg'
-import gym1 from '@/assets/gym-1.jpg'
-import gym2 from '@/assets/gym-2.jpg'
+import InlineContactForm from '@/components/InlineContactForm'
+import MainLayout from '@/layouts/MainLayout'
 
 const useScrollReveal = () => {
     const ref = useRef<HTMLDivElement>(null)
     const [isVisible, setIsVisible] = useState(false)
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) setIsVisible(true)
+            if (entry.isIntersecting) {
+setIsVisible(true)
+}
         }, { threshold: 0.15 })
-        if (ref.current) observer.observe(ref.current)
+
+        if (ref.current) {
+observer.observe(ref.current)
+}
+
         return () => observer.disconnect()
     }, [])
+
     return { ref, isVisible }
 }
 
@@ -116,16 +123,25 @@ function TestimonialCarousel() {
     const [canScrollNext, setCanScrollNext] = useState(false)
 
     const onSelect = useCallback(() => {
-        if (!emblaApi) return
+        if (!emblaApi) {
+return
+}
+
         setCanScrollPrev(emblaApi.canScrollPrev())
         setCanScrollNext(emblaApi.canScrollNext())
     }, [emblaApi])
 
     useEffect(() => {
-        if (!emblaApi) return
+        if (!emblaApi) {
+return
+}
+
         onSelect()
         emblaApi.on('select', onSelect)
-        return () => { emblaApi.off('select', onSelect) }
+
+        return () => {
+ emblaApi.off('select', onSelect) 
+}
     }, [emblaApi, onSelect])
 
     return (
@@ -175,13 +191,19 @@ function TransformationCarousel({ isVisible }: { isVisible: boolean }) {
     const [canScrollNext, setCanScrollNext] = useState(false)
 
     const onSelect = useCallback(() => {
-        if (!emblaApi) return
+        if (!emblaApi) {
+return
+}
+
         setCanScrollPrev(emblaApi.canScrollPrev())
         setCanScrollNext(emblaApi.canScrollNext())
     }, [emblaApi])
 
     useEffect(() => {
-        if (!emblaApi) return
+        if (!emblaApi) {
+return
+}
+
         onSelect()
         emblaApi.on('select', onSelect)
         emblaApi.on('reInit', onSelect)
@@ -222,10 +244,10 @@ function TransformationCarousel({ isVisible }: { isVisible: boolean }) {
 }
 
 export default function TransformatieFormule() {
-    const hero = useScrollReveal()
-    const phasesSection = useScrollReveal()
-    const transformations = useScrollReveal()
-    const ctaSection = useScrollReveal()
+    const { ref: heroRef, isVisible: heroVisible } = useScrollReveal()
+    const { ref: phasesRef, isVisible: phasesVisible } = useScrollReveal()
+    const { ref: transformationsRef, isVisible: transformationsVisible } = useScrollReveal()
+    const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal()
 
     return (
         <MainLayout>
@@ -249,7 +271,7 @@ export default function TransformatieFormule() {
                     <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
                 </div>
 
-                <div ref={hero.ref} className={`container relative z-10 mx-auto max-w-5xl px-4 text-center transition-all duration-1000 ${hero.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+                <div ref={heroRef} className={`container relative z-10 mx-auto max-w-5xl px-4 text-center transition-all duration-1000 ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
                     <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-6 py-2">
                         <Star className="h-4 w-4 fill-primary text-primary" />
                         <span className="text-sm font-bold uppercase tracking-wider text-primary">Bewezen methode – 1000+ transformaties</span>
@@ -307,8 +329,8 @@ export default function TransformatieFormule() {
 
             {/* Phases Section */}
             <section id="fases" className="py-24 md:py-32">
-                <div ref={phasesSection.ref} className="container mx-auto max-w-6xl px-4">
-                    <div className={`mb-20 text-center transition-all duration-700 ${phasesSection.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={phasesRef} className="container mx-auto max-w-6xl px-4">
+                    <div className={`mb-20 text-center transition-all duration-700 ${phasesVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <h2 className="section-title mb-4">De 4 Fases</h2>
                         <p className="section-subtitle mx-auto">Elke fase is zorgvuldig ontworpen om je stap voor stap naar je beste versie te brengen.</p>
                     </div>
@@ -317,7 +339,7 @@ export default function TransformatieFormule() {
                         {phases.map((phase, index) => (
                             <div
                                 key={phase.title}
-                                className={`relative rounded-2xl border ${phase.borderColor} bg-gradient-to-br ${phase.color} p-8 transition-all duration-700 md:p-12 ${phasesSection.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
+                                className={`relative rounded-2xl border ${phase.borderColor} bg-gradient-to-br ${phase.color} p-8 transition-all duration-700 md:p-12 ${phasesVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
                                 style={{ transitionDelay: `${index * 150}ms` }}
                             >
                                 <div className="flex flex-col gap-8 md:flex-row">
@@ -373,8 +395,8 @@ export default function TransformatieFormule() {
 
             {/* Transformations Carousel */}
             <section className="bg-card py-24">
-                <div ref={transformations.ref} className="container mx-auto max-w-6xl px-4">
-                    <div className={`mb-16 text-center transition-all duration-700 ${transformations.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={transformationsRef} className="container mx-auto max-w-6xl px-4">
+                    <div className={`mb-16 text-center transition-all duration-700 ${transformationsVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <span className="text-sm font-bold uppercase tracking-wider text-primary">We Are</span>
                         <h2 className="section-title mb-4 mt-2">Changing Lives</h2>
                         <p className="section-subtitle mx-auto">
@@ -382,7 +404,7 @@ export default function TransformatieFormule() {
                         </p>
                     </div>
 
-                    <TransformationCarousel isVisible={transformations.isVisible} />
+                    <TransformationCarousel isVisible={transformationsVisible} />
                 </div>
             </section>
 
@@ -419,7 +441,7 @@ export default function TransformatieFormule() {
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background" />
                 </div>
 
-                <div ref={ctaSection.ref} className={`container relative z-10 mx-auto max-w-3xl px-4 transition-all duration-700 ${ctaSection.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={ctaRef} className={`container relative z-10 mx-auto max-w-3xl px-4 transition-all duration-700 ${ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                     <div className="mb-10 text-center">
                         <h2 className="section-title mb-6">
                             Zet vandaag de stap<br />

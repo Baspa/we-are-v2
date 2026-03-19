@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
 import { Head } from '@inertiajs/react'
-import MainLayout from '@/layouts/MainLayout'
-import InlineContactForm from '@/components/InlineContactForm'
 import { Check, MapPin, Phone, Mail } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 import udenImage1 from '@/assets/uden-1.jpg'
 import udenImage2 from '@/assets/uden-2.jpg'
 import udenImage3 from '@/assets/uden-3.jpg'
+import InlineContactForm from '@/components/InlineContactForm'
+import MainLayout from '@/layouts/MainLayout'
 
 const benefits = [
     "Op maat gemaakt voeding,- en trainingsschema's",
@@ -22,11 +22,18 @@ const useScrollReveal = () => {
     const ref = useRef<HTMLDivElement>(null)
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) setIsVisible(true)
+            if (entry.isIntersecting) {
+setIsVisible(true)
+}
         }, { threshold: 0.1 })
-        if (ref.current) observer.observe(ref.current)
+
+        if (ref.current) {
+observer.observe(ref.current)
+}
+
         return () => observer.disconnect()
     }, [])
+
     return { ref, isVisible }
 }
 
@@ -60,10 +67,10 @@ const localBusinessSchema = {
 }
 
 export default function LocatieUden() {
-    const hero = useScrollReveal()
-    const about = useScrollReveal()
-    const noJojo = useScrollReveal()
-    const gym = useScrollReveal()
+    const { ref: heroRef, isVisible: heroVisible } = useScrollReveal()
+    const { ref: aboutRef, isVisible: aboutVisible } = useScrollReveal()
+    const { ref: noJojoRef, isVisible: noJojoVisible } = useScrollReveal()
+    const { ref: gymRef, isVisible: gymVisible } = useScrollReveal()
 
     return (
         <MainLayout>
@@ -83,8 +90,8 @@ export default function LocatieUden() {
             {/* Hero */}
             <section className="relative overflow-hidden bg-background pb-20 pt-32 md:pb-28 md:pt-40">
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-                <div ref={hero.ref} className="container relative z-10 px-4">
-                    <div className={`mx-auto max-w-4xl text-center transition-all duration-700 ${hero.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={heroRef} className="container relative z-10 px-4">
+                    <div className={`mx-auto max-w-4xl text-center transition-all duration-700 ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <div className="mb-4 flex items-center justify-center gap-2">
                             <MapPin className="h-5 w-5 text-primary" />
                             <p className="text-sm font-medium uppercase tracking-[0.3em] text-primary">Locatie Uden</p>
@@ -98,8 +105,8 @@ export default function LocatieUden() {
 
             {/* Intro + Image */}
             <section className="bg-card py-16 md:py-24">
-                <div ref={about.ref} className="container px-4">
-                    <div className={`grid items-center gap-12 transition-all duration-700 md:grid-cols-2 ${about.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={aboutRef} className="container px-4">
+                    <div className={`grid items-center gap-12 transition-all duration-700 md:grid-cols-2 ${aboutVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <div>
                             <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
                                 WE ARE your physical and mental personal training Uden is de nieuwe standaard in Uden. Het unieke Personal Training programma is een vernieuwend concept. Met ons twaalf weken programma helpen we de inwoners van Uden en omstreken om de transformatie van hun leven te maken zonder een jojo-effect als gevolg!
@@ -126,8 +133,8 @@ export default function LocatieUden() {
 
             {/* Afvallen zonder jojo */}
             <section className="bg-background py-16 md:py-24">
-                <div ref={noJojo.ref} className="container px-4">
-                    <div className={`grid items-center gap-12 transition-all duration-700 md:grid-cols-2 ${noJojo.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={noJojoRef} className="container px-4">
+                    <div className={`grid items-center gap-12 transition-all duration-700 md:grid-cols-2 ${noJojoVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <div className="order-2 aspect-[4/3] overflow-hidden rounded-2xl md:order-1">
                             <img src={udenImage2} alt="Sportschool Uden" className="h-full w-full object-cover" loading="lazy" />
                         </div>
@@ -147,8 +154,8 @@ export default function LocatieUden() {
 
             {/* Onze sportschool */}
             <section className="bg-card py-16 md:py-24">
-                <div ref={gym.ref} className="container px-4">
-                    <div className={`grid items-center gap-12 transition-all duration-700 md:grid-cols-2 ${gym.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={gymRef} className="container px-4">
+                    <div className={`grid items-center gap-12 transition-all duration-700 md:grid-cols-2 ${gymVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <div>
                             <h2 className="section-title mb-6">Onze sportschool in <span className="text-primary">Uden</span></h2>
                             <p className="mb-6 text-lg leading-relaxed text-muted-foreground">

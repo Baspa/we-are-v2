@@ -1,27 +1,34 @@
-import { useEffect, useRef, useState } from 'react'
 import { Head } from '@inertiajs/react'
-import MainLayout from '@/layouts/MainLayout'
-import InlineContactForm from '@/components/InlineContactForm'
 import { Clock, Users, Heart, Brain, Shield, Star } from 'lucide-react'
-import gym1 from '@/assets/gym-1.jpg'
-import gym2 from '@/assets/gym-2.jpg'
+import { useEffect, useRef, useState } from 'react'
 import atmosphere1 from '@/assets/atmosphere-1.jpg'
 import atmosphere2 from '@/assets/atmosphere-2.jpg'
 import atmosphere3 from '@/assets/atmosphere-3.jpg'
 import atmosphere5 from '@/assets/atmosphere-5.jpg'
 import atmosphere7 from '@/assets/atmosphere-7.jpg'
+import gym1 from '@/assets/gym-1.jpg'
+import gym2 from '@/assets/gym-2.jpg'
 import waaromResultaten from '@/assets/waarom-resultaten.jpg'
+import InlineContactForm from '@/components/InlineContactForm'
+import MainLayout from '@/layouts/MainLayout'
 
 const useScrollReveal = () => {
     const ref = useRef<HTMLDivElement>(null)
     const [isVisible, setIsVisible] = useState(false)
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) setIsVisible(true)
+            if (entry.isIntersecting) {
+setIsVisible(true)
+}
         }, { threshold: 0.15 })
-        if (ref.current) observer.observe(ref.current)
+
+        if (ref.current) {
+observer.observe(ref.current)
+}
+
         return () => observer.disconnect()
     }, [])
+
     return { ref, isVisible }
 }
 
@@ -65,9 +72,9 @@ const reasons = [
 ]
 
 export default function Waarom() {
-    const hero = useScrollReveal()
-    const reasonsSection = useScrollReveal()
-    const ctaSection = useScrollReveal()
+    const { ref: heroRef, isVisible: heroVisible } = useScrollReveal()
+    const { ref: reasonsRef, isVisible: reasonsVisible } = useScrollReveal()
+    const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal()
 
     return (
         <MainLayout>
@@ -90,7 +97,7 @@ export default function Waarom() {
                     <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
                 </div>
 
-                <div ref={hero.ref} className={`container relative z-10 mx-auto max-w-4xl px-4 text-center transition-all duration-1000 ${hero.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+                <div ref={heroRef} className={`container relative z-10 mx-auto max-w-4xl px-4 text-center transition-all duration-1000 ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
                     <span className="text-sm font-bold uppercase tracking-widest text-primary">We Are</span>
                     <h1 className="mb-6 mt-3 text-5xl leading-[0.9] md:text-7xl lg:text-8xl">
                         Waarom de<br />
@@ -108,14 +115,15 @@ export default function Waarom() {
 
             {/* Reasons - Alternating layout */}
             <section className="py-24">
-                <div ref={reasonsSection.ref} className="container mx-auto max-w-6xl px-4">
+                <div ref={reasonsRef} className="container mx-auto max-w-6xl px-4">
                     <div className="space-y-24">
                         {reasons.map((reason, index) => {
                             const isEven = index % 2 === 0
+
                             return (
                                 <div
                                     key={reason.title}
-                                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 transition-all duration-700 md:gap-16 ${reasonsSection.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
+                                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 transition-all duration-700 md:gap-16 ${reasonsVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
                                     style={{ transitionDelay: `${index * 100}ms` }}
                                 >
                                     {/* Image */}
@@ -161,7 +169,7 @@ export default function Waarom() {
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background" />
                 </div>
 
-                <div ref={ctaSection.ref} className={`container relative z-10 mx-auto max-w-3xl px-4 transition-all duration-700 ${ctaSection.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={ctaRef} className={`container relative z-10 mx-auto max-w-3xl px-4 transition-all duration-700 ${ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                     <div className="mb-10 text-center">
                         <h2 className="section-title mb-6">
                             Dus, waar wacht<br />

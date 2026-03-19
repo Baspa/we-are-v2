@@ -1,19 +1,26 @@
-import { useEffect, useRef, useState } from 'react'
 import { Head, Link } from '@inertiajs/react'
-import MainLayout from '@/layouts/MainLayout'
 import { ArrowRight } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import MainLayout from '@/layouts/MainLayout'
 
 const useScrollReveal = () => {
     const ref = useRef<HTMLDivElement>(null)
     const [isVisible, setIsVisible] = useState(false)
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) setIsVisible(true)
+            if (entry.isIntersecting) {
+setIsVisible(true)
+}
         }, { threshold: 0.1 })
-        if (ref.current) observer.observe(ref.current)
+
+        if (ref.current) {
+observer.observe(ref.current)
+}
+
         return () => observer.disconnect()
     }, [])
+
     return { ref, isVisible }
 }
 
@@ -54,9 +61,9 @@ const faqSchema = {
 }
 
 export default function FAQ() {
-    const hero = useScrollReveal()
-    const content = useScrollReveal()
-    const cta = useScrollReveal()
+    const { ref: heroRef, isVisible: heroVisible } = useScrollReveal()
+    const { ref: contentRef, isVisible: contentVisible } = useScrollReveal()
+    const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal()
 
     return (
         <MainLayout>
@@ -76,7 +83,7 @@ export default function FAQ() {
             {/* Hero */}
             <section className="relative flex min-h-[50vh] items-center justify-center pt-20">
                 <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-card" />
-                <div ref={hero.ref} className={`container relative z-10 px-4 text-center transition-all duration-700 ${hero.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={heroRef} className={`container relative z-10 px-4 text-center transition-all duration-700 ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                     <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">FAQ</p>
                     <h1 className="mb-6 text-4xl text-foreground md:text-6xl lg:text-7xl">
                         Veelgestelde Vragen over Personal Training in Uden & Schijndel
@@ -90,7 +97,7 @@ export default function FAQ() {
             {/* FAQ Accordion */}
             <section className="bg-card py-20 md:py-28">
                 <div className="container mx-auto max-w-3xl px-4">
-                    <div ref={content.ref} className={`transition-all duration-700 ${content.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <div ref={contentRef} className={`transition-all duration-700 ${contentVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <Accordion type="single" collapsible className="space-y-4">
                             {faqItems.map((item, index) => (
                                 <AccordionItem
@@ -114,7 +121,7 @@ export default function FAQ() {
             {/* CTA */}
             <section className="py-20 md:py-28">
                 <div className="container px-4">
-                    <div ref={cta.ref} className={`text-center transition-all duration-700 ${cta.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <div ref={ctaRef} className={`text-center transition-all duration-700 ${ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <h2 className="mb-6 text-3xl text-foreground md:text-5xl">
                             Laten we elkaar ontmoeten!
                         </h2>

@@ -1,17 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
 import { Head, Link } from '@inertiajs/react'
-import MainLayout from '@/layouts/MainLayout'
-import InlineContactForm from '@/components/InlineContactForm'
 import { TrendingUp, Star, Award, Users, ArrowRight, X } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
-import transformation1 from '@/assets/transformation-1.jpg'
-import transformation2 from '@/assets/transformation-2.jpg'
-import transformation3 from '@/assets/transformation-3.jpg'
-import transformation4 from '@/assets/transformation-4.png'
-import transformation5 from '@/assets/transformation-5.jpg'
-import transformation6 from '@/assets/transformation-6.jpg'
-import transformation7 from '@/assets/transformation-7.jpg'
-import transformation8 from '@/assets/transformation-8.jpg'
 import transformation9 from '@/assets/transformation-9.png'
 import transformation10 from '@/assets/transformation-10.png'
 import transformation11 from '@/assets/transformation-11.jpg'
@@ -45,6 +35,16 @@ import member17 from '@/assets/member-17.jpg'
 import member18 from '@/assets/member-18.jpg'
 import member19 from '@/assets/member-19.jpg'
 import member20 from '@/assets/member-20.jpg'
+import transformation1 from '@/assets/transformation-1.jpg'
+import transformation2 from '@/assets/transformation-2.jpg'
+import transformation3 from '@/assets/transformation-3.jpg'
+import transformation4 from '@/assets/transformation-4.png'
+import transformation5 from '@/assets/transformation-5.jpg'
+import transformation6 from '@/assets/transformation-6.jpg'
+import transformation7 from '@/assets/transformation-7.jpg'
+import transformation8 from '@/assets/transformation-8.jpg'
+import InlineContactForm from '@/components/InlineContactForm'
+import MainLayout from '@/layouts/MainLayout'
 
 const transformations = [
     transformation1, transformation2, transformation3, transformation4, transformation5,
@@ -80,9 +80,15 @@ const useScrollReveal = () => {
 
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) setIsVisible(true)
+            if (entry.isIntersecting) {
+setIsVisible(true)
+}
         }, { threshold: 0.1 })
-        if (ref.current) observer.observe(ref.current)
+
+        if (ref.current) {
+observer.observe(ref.current)
+}
+
         return () => observer.disconnect()
     }, [])
 
@@ -151,18 +157,19 @@ export default function Resultaten() {
         const timer = setTimeout(() => {
             setShowPopup(true)
         }, 3000)
+
         return () => clearTimeout(timer)
     }, [])
 
-    const hero = useScrollReveal()
-    const grid1 = useScrollReveal()
-    const q1 = useScrollReveal()
-    const memberGrid1 = useScrollReveal()
-    const q2 = useScrollReveal()
-    const grid2 = useScrollReveal()
-    const q3 = useScrollReveal()
-    const memberGrid2 = useScrollReveal()
-    const q4 = useScrollReveal()
+    const { ref: heroRef, isVisible: heroVisible } = useScrollReveal()
+    const { ref: grid1Ref, isVisible: grid1Visible } = useScrollReveal()
+    const { ref: q1Ref, isVisible: q1Visible } = useScrollReveal()
+    const { ref: memberGrid1Ref, isVisible: memberGrid1Visible } = useScrollReveal()
+    const { ref: q2Ref, isVisible: q2Visible } = useScrollReveal()
+    const { ref: grid2Ref, isVisible: grid2Visible } = useScrollReveal()
+    const { ref: q3Ref, isVisible: q3Visible } = useScrollReveal()
+    const { ref: memberGrid2Ref, isVisible: memberGrid2Visible } = useScrollReveal()
+    const { ref: q4Ref, isVisible: q4Visible } = useScrollReveal()
 
     return (
         <MainLayout>
@@ -181,8 +188,8 @@ export default function Resultaten() {
             {/* Hero */}
             <section className="relative overflow-hidden bg-background pb-20 pt-32 md:pb-28 md:pt-40">
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-                <div ref={hero.ref} className="container relative z-10 px-4">
-                    <div className={`mx-auto max-w-4xl text-center transition-all duration-700 ${hero.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={heroRef} className="container relative z-10 px-4">
+                    <div className={`mx-auto max-w-4xl text-center transition-all duration-700 ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">Bewezen Resultaten</p>
                         <h1 className="section-title mb-6">
                             <span className="text-primary">1000+</span> Levens Veranderd
@@ -193,7 +200,7 @@ export default function Resultaten() {
                     </div>
 
                     {/* Stats */}
-                    <div className={`mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-4 transition-all delay-300 duration-700 md:grid-cols-4 md:gap-6 ${hero.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <div className={`mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-4 transition-all delay-300 duration-700 md:grid-cols-4 md:gap-6 ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         {stats.map((stat) => (
                             <div key={stat.label} className="rounded-xl border border-border bg-card p-6 text-center">
                                 <stat.icon className="mx-auto mb-3 h-6 w-6 text-primary" />
@@ -208,56 +215,56 @@ export default function Resultaten() {
             {/* Block 1: Voor & Na */}
             <section className="bg-card py-10 md:py-14">
                 <div className="container px-4">
-                    <PhotoGrid photos={transformations.slice(0, 10)} isVisible={grid1.isVisible} refProp={grid1.ref} />
+                    <PhotoGrid photos={transformations.slice(0, 10)} isVisible={grid1Visible} refProp={grid1Ref} />
                 </div>
             </section>
 
             {/* Quote 1 */}
             <section className="bg-background">
                 <div className="container px-4">
-                    <QuoteBanner quote={quotes[0]} isVisible={q1.isVisible} refProp={q1.ref} />
+                    <QuoteBanner quote={quotes[0]} isVisible={q1Visible} refProp={q1Ref} />
                 </div>
             </section>
 
             {/* Block 2: Leden met schijf */}
             <section className="bg-card py-10 md:py-14">
                 <div className="container px-4">
-                    <MemberGrid photos={members.slice(0, 10)} isVisible={memberGrid1.isVisible} refProp={memberGrid1.ref} />
+                    <MemberGrid photos={members.slice(0, 10)} isVisible={memberGrid1Visible} refProp={memberGrid1Ref} />
                 </div>
             </section>
 
             {/* Quote 2 */}
             <section className="bg-background">
                 <div className="container px-4">
-                    <QuoteBanner quote={quotes[1]} isVisible={q2.isVisible} refProp={q2.ref} />
+                    <QuoteBanner quote={quotes[1]} isVisible={q2Visible} refProp={q2Ref} />
                 </div>
             </section>
 
             {/* Block 3: Voor & Na */}
             <section className="bg-card py-10 md:py-14">
                 <div className="container px-4">
-                    <PhotoGrid photos={transformations.slice(10, 20)} isVisible={grid2.isVisible} refProp={grid2.ref} />
+                    <PhotoGrid photos={transformations.slice(10, 20)} isVisible={grid2Visible} refProp={grid2Ref} />
                 </div>
             </section>
 
             {/* Quote 3 */}
             <section className="bg-background">
                 <div className="container px-4">
-                    <QuoteBanner quote={quotes[2]} isVisible={q3.isVisible} refProp={q3.ref} />
+                    <QuoteBanner quote={quotes[2]} isVisible={q3Visible} refProp={q3Ref} />
                 </div>
             </section>
 
             {/* Block 4: Leden met schijf */}
             <section className="bg-card py-10 md:py-14">
                 <div className="container px-4">
-                    <MemberGrid photos={members.slice(10, 20)} isVisible={memberGrid2.isVisible} refProp={memberGrid2.ref} />
+                    <MemberGrid photos={members.slice(10, 20)} isVisible={memberGrid2Visible} refProp={memberGrid2Ref} />
                 </div>
             </section>
 
             {/* Quote 4 */}
             <section className="bg-background">
                 <div className="container px-4">
-                    <QuoteBanner quote={quotes[3]} isVisible={q4.isVisible} refProp={q4.ref} />
+                    <QuoteBanner quote={quotes[3]} isVisible={q4Visible} refProp={q4Ref} />
                 </div>
             </section>
 
