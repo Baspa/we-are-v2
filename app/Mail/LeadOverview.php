@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use Carbon\Carbon;
+use Carbon\CarbonInterface;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
@@ -23,9 +23,9 @@ class LeadOverview extends Mailable
 
     public array $locationBreakdown;
 
-    public Carbon $periodStart;
+    public CarbonInterface $periodStart;
 
-    public Carbon $periodEnd;
+    public CarbonInterface $periodEnd;
 
     /**
      * Create a new message instance.
