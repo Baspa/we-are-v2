@@ -1,20 +1,20 @@
-import { useEffect, useRef, useState } from 'react'
 import { Link } from '@inertiajs/react'
 import { ArrowRight, TrendingUp, ChevronLeft, ChevronRight, Star } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
 import transformation1 from '@/assets/transformation-1.jpg'
 import transformation2 from '@/assets/transformation-2.jpg'
 import transformation3 from '@/assets/transformation-3.jpg'
-import transformation4 from '@/assets/transformation-4.png'
-import transformation5 from '@/assets/transformation-5.jpg'
 import transformation31 from '@/assets/transformation-31.jpg'
 import transformation32 from '@/assets/transformation-32.jpg'
 import transformation33 from '@/assets/transformation-33.jpg'
 import transformation34 from '@/assets/transformation-34.jpg'
 import transformation35 from '@/assets/transformation-35.jpg'
 import transformation36 from '@/assets/transformation-36.png'
+import transformation4 from '@/assets/transformation-4.png'
 import transformation40 from '@/assets/transformation-40.jpg'
 import transformation41 from '@/assets/transformation-41.png'
+import transformation5 from '@/assets/transformation-5.jpg'
 
 const transformations = [
     { id: 1, image: transformation1 },
@@ -42,6 +42,7 @@ export default function ResultsSection() {
         const checkMobile = () => setIsMobile(window.innerWidth < 768)
         checkMobile()
         window.addEventListener('resize', checkMobile)
+
         return () => window.removeEventListener('resize', checkMobile)
     }, [])
 

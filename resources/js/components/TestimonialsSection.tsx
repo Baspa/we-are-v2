@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState, useCallback } from 'react'
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
 import useEmblaCarousel from 'embla-carousel-react'
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 
+import video15Kilo from '@/assets/testimonial-15kilo.mp4'
+import videoJeroen from '@/assets/testimonial-jeroen.mp4'
 import videoJojanneke from '@/assets/testimonial-jojanneke.mp4'
 import videoTonny from '@/assets/testimonial-tonny.mp4'
-import videoJeroen from '@/assets/testimonial-jeroen.mp4'
-import video15Kilo from '@/assets/testimonial-15kilo.mp4'
 
 const videoTestimonials = [
     { name: 'Jojanneke', video: videoJojanneke, subtitle: '13 Kilo Kwijt in 12 Weken' },
@@ -38,15 +38,22 @@ function VideoCarousel({ items, isVisible }: { items: typeof videoTestimonials; 
     const [canScrollNext, setCanScrollNext] = useState(false)
 
     const onSelect = useCallback(() => {
-        if (!emblaApi) return
+        if (!emblaApi) {
+return
+}
+
         setCanScrollPrev(emblaApi.canScrollPrev())
         setCanScrollNext(emblaApi.canScrollNext())
     }, [emblaApi])
 
     useEffect(() => {
-        if (!emblaApi) return
+        if (!emblaApi) {
+return
+}
+
         onSelect()
         emblaApi.on('select', onSelect)
+
         return () => {
             emblaApi.off('select', onSelect)
         }

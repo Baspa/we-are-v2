@@ -1,6 +1,6 @@
 import { Head, Link } from '@inertiajs/react'
-import MainLayout from '@/layouts/MainLayout'
 import { CheckCircle2, Phone, ArrowRight } from 'lucide-react'
+import MainLayout from '@/layouts/MainLayout'
 
 export default function Thanks() {
     return (

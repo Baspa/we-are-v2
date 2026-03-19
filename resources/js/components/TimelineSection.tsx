@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
 import { RotateCcw, Hammer, Sparkles, Shield } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
 const timelineSteps = [
     {
@@ -92,6 +92,7 @@ export default function TimelineSection() {
             (entries) => {
                 entries.forEach((entry) => {
                     const index = Number(entry.target.getAttribute('data-index'))
+
                     if (entry.isIntersecting) {
                         setVisibleSteps((prev) => new Set([...prev, index]))
                     }
@@ -101,7 +102,9 @@ export default function TimelineSection() {
         )
 
         stepsRef.current.forEach((el) => {
-            if (el) observer.observe(el)
+            if (el) {
+observer.observe(el)
+}
         })
 
         return () => observer.disconnect()

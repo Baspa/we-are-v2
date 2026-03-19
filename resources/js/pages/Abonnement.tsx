@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import { Head } from '@inertiajs/react'
-import MainLayout from '@/layouts/MainLayout'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, ArrowLeft, Send, Loader2 } from 'lucide-react'
+import { useState } from 'react'
+import MainLayout from '@/layouts/MainLayout'
 
 type Abonnement = 'premium' | 'onderhoud_plus' | 'onderhoud' | null
 type TrainingType = 'personal' | 'duo' | null
@@ -37,34 +37,70 @@ export default function Abonnement() {
     const [sent, setSent] = useState(false)
 
     const getStep = () => {
-        if (!abonnement) return 1
-        if (abonnement === 'premium' && !trainingType) return 2
-        if (abonnement === 'premium' && trainingType === 'personal' && !frequentie) return 3
-        if (abonnement === 'premium' && trainingType === 'duo' && !frequentie) return 6
-        if (abonnement === 'premium' && trainingType === 'duo' && frequentie) return 'price'
-        if (abonnement === 'premium' && trainingType === 'personal' && frequentie) return 'price'
-        if (abonnement === 'onderhoud_plus' && !frequentie) return 4
-        if (abonnement === 'onderhoud_plus' && frequentie) return 'price'
-        if (abonnement === 'onderhoud' && !contract) return 5
-        if (abonnement === 'onderhoud' && contract) return 'price'
+        if (!abonnement) {
+return 1
+}
+
+        if (abonnement === 'premium' && !trainingType) {
+return 2
+}
+
+        if (abonnement === 'premium' && trainingType === 'personal' && !frequentie) {
+return 3
+}
+
+        if (abonnement === 'premium' && trainingType === 'duo' && !frequentie) {
+return 6
+}
+
+        if (abonnement === 'premium' && trainingType === 'duo' && frequentie) {
+return 'price'
+}
+
+        if (abonnement === 'premium' && trainingType === 'personal' && frequentie) {
+return 'price'
+}
+
+        if (abonnement === 'onderhoud_plus' && !frequentie) {
+return 4
+}
+
+        if (abonnement === 'onderhoud_plus' && frequentie) {
+return 'price'
+}
+
+        if (abonnement === 'onderhoud' && !contract) {
+return 5
+}
+
+        if (abonnement === 'onderhoud' && contract) {
+return 'price'
+}
+
         return 1
     }
 
     const getPrice = (): string => {
         if (abonnement === 'premium' && trainingType === 'personal') {
             const prices: Record<number, string> = { 1: '€325', 2: '€625', 3: '€870', 4: '€1.120' }
+
             return prices[frequentie!] + ' per maand'
         }
+
         if (abonnement === 'premium' && trainingType === 'duo') {
             const prices: Record<number, string> = { 1: '€265', 2: '€525', 3: '€715', 4: '€885' }
+
             return prices[frequentie!] + ' per persoon per maand'
         }
+
         if (abonnement === 'onderhoud_plus') {
             return frequentie === 1 ? '€175 per maand' : '€350 per maand'
         }
+
         if (abonnement === 'onderhoud') {
             return contract === 'maandelijks' ? '€70 per maand' : '€67,50 per maand'
         }
+
         return ''
     }
 
@@ -76,10 +112,21 @@ export default function Abonnement() {
             maandelijks: 'Maandelijks opzegbaar', jaarcontract: '1 jaar contract',
         }
         lines.push(`Abonnement: ${labels[abonnement!]}`)
-        if (trainingType) lines.push(`Type: ${labels[trainingType]}`)
-        if (frequentie) lines.push(`Frequentie: ${frequentie}x per week`)
-        if (contract) lines.push(`Contract: ${labels[contract]}`)
+
+        if (trainingType) {
+lines.push(`Type: ${labels[trainingType]}`)
+}
+
+        if (frequentie) {
+lines.push(`Frequentie: ${frequentie}x per week`)
+}
+
+        if (contract) {
+lines.push(`Contract: ${labels[contract]}`)
+}
+
         lines.push(`Prijs: ${getPrice()}`)
+
         return lines
     }
 
@@ -105,13 +152,22 @@ export default function Abonnement() {
 
     const goBack = () => {
         const step = getStep()
+
         if (step === 'price') {
-            if (abonnement === 'premium' && trainingType === 'personal') setFrequentie(null)
-            else if (abonnement === 'premium' && trainingType === 'duo') setFrequentie(null)
-            else if (abonnement === 'onderhoud_plus') setFrequentie(null)
-            else if (abonnement === 'onderhoud') setContract(null)
-        } else if (step === 3 || step === 6) setTrainingType(null)
-        else if (step === 2 || step === 4 || step === 5) setAbonnement(null)
+            if (abonnement === 'premium' && trainingType === 'personal') {
+setFrequentie(null)
+} else if (abonnement === 'premium' && trainingType === 'duo') {
+setFrequentie(null)
+} else if (abonnement === 'onderhoud_plus') {
+setFrequentie(null)
+} else if (abonnement === 'onderhoud') {
+setContract(null)
+}
+        } else if (step === 3 || step === 6) {
+setTrainingType(null)
+} else if (step === 2 || step === 4 || step === 5) {
+setAbonnement(null)
+}
     }
 
     const step = getStep()

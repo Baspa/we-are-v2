@@ -1,8 +1,8 @@
 import { Head } from '@inertiajs/react'
-import MainLayout from '@/layouts/MainLayout'
-import InlineContactForm from '@/components/InlineContactForm'
 import { Phone, Mail } from 'lucide-react'
 import contactCoffee from '@/assets/contact-coffee.png'
+import InlineContactForm from '@/components/InlineContactForm'
+import MainLayout from '@/layouts/MainLayout'
 
 export default function Contact() {
     return (

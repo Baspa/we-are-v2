@@ -1,14 +1,14 @@
 import { Head } from '@inertiajs/react'
-import MainLayout from '@/layouts/MainLayout'
-import HeroSection from '@/components/HeroSection'
+import AtmosphereSection from '@/components/AtmosphereSection'
 import BenefitsSection from '@/components/BenefitsSection'
+import ContactSection from '@/components/ContactSection'
+import HeroSection from '@/components/HeroSection'
+import LocationsSection from '@/components/LocationsSection'
 import ResultsSection from '@/components/ResultsSection'
+import TestimonialsSection from '@/components/TestimonialsSection'
 import TimelineSection from '@/components/TimelineSection'
 import TransformationSection from '@/components/TransformationSection'
-import TestimonialsSection from '@/components/TestimonialsSection'
-import AtmosphereSection from '@/components/AtmosphereSection'
-import LocationsSection from '@/components/LocationsSection'
-import ContactSection from '@/components/ContactSection'
+import MainLayout from '@/layouts/MainLayout'
 
 export default function Index() {
     return (

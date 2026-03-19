@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
 import { Link } from '@inertiajs/react'
 import { ArrowRight, X } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export default function StickyCTA() {
     const [isVisible, setIsVisible] = useState(false)
@@ -12,10 +12,13 @@ export default function StickyCTA() {
         }
 
         window.addEventListener('scroll', handleScroll)
+
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    if (isDismissed || !isVisible) return null
+    if (isDismissed || !isVisible) {
+return null
+}
 
     return (
         <div className="animate-fade-in-up fixed bottom-0 right-0 left-0 z-50 border-t border-border bg-background/95 p-4 backdrop-blur-md">

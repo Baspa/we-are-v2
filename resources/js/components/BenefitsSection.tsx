@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
 import { Link } from '@inertiajs/react'
 import { Trophy, Wrench, FlaskConical, MapPin } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
 const benefits = [
     {

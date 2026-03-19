@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
 import { Link } from '@inertiajs/react'
 import { Users, TrendingDown } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import heroGym from '@/assets/hero-gym.jpg'
 import logoFull from '@/assets/logo-full-white.png'
 

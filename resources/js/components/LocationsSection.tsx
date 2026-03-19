@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
 import { Link } from '@inertiajs/react'
 import { MapPin, ArrowRight } from 'lucide-react'
-import gymUden from '@/assets/gym-uden.jpg'
+import { useEffect, useRef, useState } from 'react'
 import gym3 from '@/assets/gym-3.jpg'
+import gymUden from '@/assets/gym-uden.jpg'
 
 const locations = [
     {

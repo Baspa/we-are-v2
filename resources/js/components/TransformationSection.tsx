@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
 import { Check, ArrowRight, Zap } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
 const transformationBenefits = [
     'Weer met een lach in de spiegel kijken',

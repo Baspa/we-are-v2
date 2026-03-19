@@ -1,6 +1,6 @@
-import { type PropsWithChildren } from 'react'
-import Navigation from '@/components/Navigation'
+import type {PropsWithChildren} from 'react';
 import Footer from '@/components/Footer'
+import Navigation from '@/components/Navigation'
 import StickyCTA from '@/components/StickyCTA'
 import { Toaster } from '@/components/ui/sonner'
 

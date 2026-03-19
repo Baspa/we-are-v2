@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
 import { Link } from '@inertiajs/react'
 import { Menu, X, Phone } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import logoIcon from '@/assets/logo-icon.png'
 
 export default function Navigation() {
@@ -12,6 +12,7 @@ export default function Navigation() {
             setIsScrolled(window.scrollY > 50)
         }
         window.addEventListener('scroll', handleScroll)
+
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 

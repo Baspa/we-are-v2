@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
 import { useForm } from '@inertiajs/react'
 import { Send, Clock, Phone, Mail, CheckCircle2 } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function ContactSection() {
     const [isVisible, setIsVisible] = useState(false)

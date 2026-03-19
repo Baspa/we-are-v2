@@ -1,10 +1,10 @@
-import { useState } from 'react'
 import { Head, Link } from '@inertiajs/react'
-import MainLayout from '@/layouts/MainLayout'
-import { ArrowRight, CheckCircle, XCircle, Download } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowRight, CheckCircle, XCircle, Download } from 'lucide-react'
+import { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import MainLayout from '@/layouts/MainLayout'
 
 type Question =
     | { type: 'radio'; question: string; options: string[]; passCondition: (answer: string) => boolean }
@@ -88,14 +88,19 @@ function NoMatchResult() {
 
     const handleDownload = () => {
         setDownloadError('')
+
         if (!firstName.trim() || !lastName.trim() || !email.trim()) {
             setDownloadError('Vul alle velden in om het e-boek te downloaden.')
+
             return
         }
+
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             setDownloadError('Vul een geldig e-mailadres in.')
+
             return
         }
+
         window.open('/boek-transformatie-formule.pdf', '_blank')
     }
 
@@ -208,10 +213,23 @@ export default function Test() {
 
     const passed = finished && answers.every((answer, i) => {
         const q = questions[i]
-        if (q.type === 'open') return true
-        if (q.type === 'yesno') return q.passCondition(answer as boolean)
-        if (q.type === 'slider') return q.passCondition(answer as number)
-        if (q.type === 'radio' || q.type === 'checkbox') return q.passCondition(answer as string)
+
+        if (q.type === 'open') {
+return true
+}
+
+        if (q.type === 'yesno') {
+return q.passCondition(answer as boolean)
+}
+
+        if (q.type === 'slider') {
+return q.passCondition(answer as number)
+}
+
+        if (q.type === 'radio' || q.type === 'checkbox') {
+return q.passCondition(answer as string)
+}
+
         return true
     })
 
@@ -225,7 +243,9 @@ export default function Test() {
     }
 
     const renderQuestion = () => {
-        if (!current) return null
+        if (!current) {
+return null
+}
 
         switch (current.type) {
             case 'radio':
