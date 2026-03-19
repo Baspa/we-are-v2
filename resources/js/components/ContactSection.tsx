@@ -6,7 +6,7 @@ export default function ContactSection() {
     const [isVisible, setIsVisible] = useState(false)
     const sectionRef = useRef<HTMLElement>(null)
 
-    const { data, setData, post, processing, wasSuccessful, errors, reset } = useForm({
+    const { data, setData, post, processing, wasSuccessful, errors } = useForm({
         name: '',
         email: '',
         phone: '',

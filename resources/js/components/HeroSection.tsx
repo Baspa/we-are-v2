@@ -1,15 +1,10 @@
-import { Link } from '@inertiajs/react'
 import { Users, TrendingDown } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import heroGym from '@/assets/hero-gym.jpg'
 import logoFull from '@/assets/logo-full-white.png'
 
 export default function HeroSection() {
-    const [isVisible, setIsVisible] = useState(false)
-
-    useEffect(() => {
-        setIsVisible(true)
-    }, [])
+    const [isVisible] = useState(true)
 
     return (
         <section className="relative flex min-h-screen items-center justify-center overflow-hidden">

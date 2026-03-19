@@ -133,15 +133,15 @@ return
 
     useEffect(() => {
         if (!emblaApi) {
-return
-}
+            return
+        }
 
-        onSelect()
+        queueMicrotask(onSelect)
         emblaApi.on('select', onSelect)
 
         return () => {
- emblaApi.off('select', onSelect) 
-}
+            emblaApi.off('select', onSelect)
+        }
     }, [emblaApi, onSelect])
 
     return (
@@ -201,12 +201,17 @@ return
 
     useEffect(() => {
         if (!emblaApi) {
-return
-}
+            return
+        }
 
-        onSelect()
+        queueMicrotask(onSelect)
         emblaApi.on('select', onSelect)
         emblaApi.on('reInit', onSelect)
+
+        return () => {
+            emblaApi.off('select', onSelect)
+            emblaApi.off('reInit', onSelect)
+        }
     }, [emblaApi, onSelect])
 
     return (

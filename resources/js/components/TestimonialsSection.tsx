@@ -48,10 +48,10 @@ return
 
     useEffect(() => {
         if (!emblaApi) {
-return
-}
+            return
+        }
 
-        onSelect()
+        queueMicrotask(onSelect)
         emblaApi.on('select', onSelect)
 
         return () => {
