@@ -3,9 +3,296 @@
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
+/* WE ARE - Personal Training Design System
+   Based on official brand guidelines (huisstijlmanual)
+   Colors: #d4d328 (Yellow/Lemon) & #654093 (Purple/Violet)
+   Typography: Syne (headings) & Space Grotesk (body)
+   Background: Black (stoer zwart)
+   All colors MUST be HSL */
+
 @theme {
-    --font-sans:
-        'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-        'Noto Color Emoji';
+    /* Core colors - Stoer Zwart theme */
+    --color-background: hsl(0 0% 0%);
+    --color-foreground: hsl(0 0% 98%);
+
+    --color-card: hsl(0 0% 5%);
+    --color-card-foreground: hsl(0 0% 98%);
+
+    --color-popover: hsl(0 0% 5%);
+    --color-popover-foreground: hsl(0 0% 98%);
+
+    /* Primary - Brand Yellow #d4d328 = HSL(59, 69%, 49%) */
+    --color-primary: hsl(59 69% 49%);
+    --color-primary-foreground: hsl(0 0% 0%);
+
+    /* Secondary - Brand Purple #654093 = HSL(272, 40%, 46%) */
+    --color-secondary: hsl(272 40% 46%);
+    --color-secondary-foreground: hsl(0 0% 98%);
+
+    --color-muted: hsl(0 0% 12%);
+    --color-muted-foreground: hsl(0 0% 60%);
+
+    --color-accent: hsl(272 40% 46%);
+    --color-accent-foreground: hsl(0 0% 98%);
+
+    --color-destructive: hsl(0 84% 60%);
+    --color-destructive-foreground: hsl(0 0% 98%);
+
+    --color-border: hsl(0 0% 15%);
+    --color-input: hsl(0 0% 15%);
+    --color-ring: hsl(59 69% 49%);
+
+    --radius: 0.5rem;
+
+    /* Custom brand colors from huisstijlmanual */
+    --color-brand-yellow: hsl(59 69% 49%);
+    --color-brand-purple: hsl(272 40% 46%);
+    --color-brand-black: hsl(0 0% 0%);
+
+    /* Typography - Tailwind v4 fonts */
+    --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+    /* Animations */
+    --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+    --animate-scale-in: scale-in 0.4s ease-out forwards;
+    --animate-slide-in-right: slide-in-right 0.5s ease-out forwards;
+    --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+    --animate-float: float 3s ease-in-out infinite;
+    --animate-shimmer: shimmer 1.5s infinite;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px hsl(59 69% 49% / 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px hsl(59 69% 49% / 0.5);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+@keyframes text-reveal {
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-family: var(--font-body);
+        font-weight: 400;
+        letter-spacing: -0.01em;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-display);
+        letter-spacing: -0.03em;
+        font-weight: 800;
+        text-transform: none;
+    }
+}
+
+@layer components {
+    /* Hero button styles */
+    .btn-hero {
+        @apply relative overflow-hidden bg-primary text-primary-foreground font-semibold py-4 px-8 text-base tracking-wide transition-all duration-300 rounded-full;
+        font-family: var(--font-body);
+        box-shadow: 0 0 40px hsl(59 69% 49% / 0.3);
+    }
+
+    .btn-hero:hover {
+        @apply scale-105;
+        box-shadow: 0 0 60px hsl(59 69% 49% / 0.5);
+    }
+
+    .btn-hero::before {
+        content: '';
+        @apply absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full transition-transform duration-500;
+    }
+
+    .btn-hero:hover::before {
+        @apply translate-x-full;
+    }
+
+    /* Secondary CTA */
+    .btn-outline-hero {
+        @apply border-2 border-primary text-primary font-semibold py-4 px-8 text-base tracking-wide transition-all duration-300 hover:bg-primary hover:text-primary-foreground rounded-full;
+        font-family: var(--font-body);
+    }
+
+    /* FOMO badge */
+    .fomo-badge {
+        @apply inline-flex items-center gap-2 bg-destructive/20 text-destructive px-4 py-2 rounded-full text-sm font-semibold animate-pulse;
+    }
+
+    /* Stats counter */
+    .stat-number {
+        @apply text-6xl md:text-7xl text-primary;
+        font-family: var(--font-display);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+    }
+
+    .stat-label {
+        @apply text-sm md:text-base tracking-wider text-muted-foreground font-light lowercase;
+    }
+
+    /* Section styling */
+    .section-title {
+        @apply text-4xl md:text-5xl lg:text-6xl;
+        font-family: var(--font-display);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+    }
+
+    .section-subtitle {
+        @apply text-lg md:text-xl text-muted-foreground max-w-2xl font-light;
+        letter-spacing: -0.01em;
+        line-height: 1.6;
+    }
+
+    /* Card hover effects */
+    .card-hover {
+        @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg;
+    }
+
+    /* Gradient text */
+    .text-gradient-brand {
+        @apply bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary;
+    }
+
+    /* Animated underline */
+    .underline-animated {
+        @apply relative;
+    }
+
+    .underline-animated::after {
+        content: '';
+        @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+    }
+
+    .underline-animated:hover::after {
+        @apply w-full;
+    }
+
+    /* Sticky CTA bar */
+    .sticky-cta {
+        @apply fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-md border-t border-border p-4 z-50;
+    }
+
+    /* Testimonial card */
+    .testimonial-card {
+        @apply bg-card rounded-lg p-6 border border-border;
+        box-shadow: 0 4px 24px hsl(0 0% 0% / 0.6);
+    }
+
+    /* Transformation grid */
+    .transformation-grid {
+        @apply grid grid-cols-2 md:grid-cols-4 gap-2;
+    }
+
+    /* Navigation */
+    .nav-link {
+        @apply text-foreground/80 hover:text-primary transition-colors duration-200 tracking-wide text-sm font-medium;
+    }
+
+    .nav-link-active {
+        @apply text-primary;
+    }
+}
+
+@layer utilities {
+    /* Animation delays */
+    .animate-delay-100 { animation-delay: 100ms; }
+    .animate-delay-200 { animation-delay: 200ms; }
+    .animate-delay-300 { animation-delay: 300ms; }
+    .animate-delay-400 { animation-delay: 400ms; }
+    .animate-delay-500 { animation-delay: 500ms; }
+
+    /* Scroll animations */
+    .fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
+        opacity: 0;
+    }
+
+    /* Pulse glow effect */
+    .pulse-glow {
+        animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    /* Shimmer effect */
+    .shimmer {
+        background: linear-gradient(
+            90deg,
+            hsl(0 0% 12%) 0%,
+            hsl(0 0% 18%) 50%,
+            hsl(0 0% 12%) 100%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite;
+    }
+
+    /* Text reveal animation */
+    .text-reveal {
+        animation: text-reveal 1s ease-out forwards;
+        clip-path: inset(0 100% 0 0);
+    }
 }
