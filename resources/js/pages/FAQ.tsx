@@ -120,7 +120,7 @@ export default function FAQ() {
 
             {/* CTA */}
             <section className="py-20 md:py-28">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <div ref={ctaRef} className={`text-center transition-all duration-700 ${ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <h2 className="mb-6 text-3xl text-foreground md:text-5xl">
                             Laten we elkaar ontmoeten!

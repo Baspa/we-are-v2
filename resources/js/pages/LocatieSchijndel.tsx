@@ -90,7 +90,7 @@ export default function LocatieSchijndel() {
             {/* Hero */}
             <section className="relative overflow-hidden bg-background pb-20 pt-32 md:pb-28 md:pt-40">
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-                <div ref={heroRef} className="container relative z-10 px-4">
+                <div ref={heroRef} className="container mx-auto relative z-10 px-4">
                     <div className={`mx-auto max-w-4xl text-center transition-all duration-700 ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <div className="mb-4 flex items-center justify-center gap-2">
                             <MapPin className="h-5 w-5 text-primary" />
@@ -105,7 +105,7 @@ export default function LocatieSchijndel() {
 
             {/* Intro + Image */}
             <section className="bg-card py-16 md:py-24">
-                <div ref={aboutRef} className="container px-4">
+                <div ref={aboutRef} className="container mx-auto px-4">
                     <div className={`grid items-center gap-12 transition-all duration-700 md:grid-cols-2 ${aboutVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <div>
                             <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
@@ -133,7 +133,7 @@ export default function LocatieSchijndel() {
 
             {/* Afvallen zonder jojo */}
             <section className="bg-background py-16 md:py-24">
-                <div ref={noJojoRef} className="container px-4">
+                <div ref={noJojoRef} className="container mx-auto px-4">
                     <div className={`grid items-center gap-12 transition-all duration-700 md:grid-cols-2 ${noJojoVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <div className="order-2 aspect-[4/3] overflow-hidden rounded-2xl md:order-1">
                             <img src={atmosphere1} alt="Sportschool Schijndel" className="h-full w-full object-cover" loading="lazy" />
@@ -154,7 +154,7 @@ export default function LocatieSchijndel() {
 
             {/* Onze sportschool */}
             <section className="bg-card py-16 md:py-24">
-                <div ref={gymRef} className="container px-4">
+                <div ref={gymRef} className="container mx-auto px-4">
                     <div className={`grid items-center gap-12 transition-all duration-700 md:grid-cols-2 ${gymVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <div>
                             <h2 className="section-title mb-6">Onze sportschool in <span className="text-primary">Schijndel</span></h2>

@@ -7,11 +7,16 @@ import videoJeroen from '@/assets/testimonial-jeroen.mp4'
 import videoJojanneke from '@/assets/testimonial-jojanneke.mp4'
 import videoTonny from '@/assets/testimonial-tonny.mp4'
 
+import member1 from '@/assets/member-1.jpg'
+import member2 from '@/assets/member-2.jpg'
+import member3 from '@/assets/member-3.jpg'
+import member4 from '@/assets/member-4.jpg'
+
 const videoTestimonials = [
-    { name: 'Jojanneke', video: videoJojanneke, subtitle: '13 Kilo Kwijt in 12 Weken' },
-    { name: 'Tonny', video: videoTonny, subtitle: 'Van 20 Kilo Overgewicht naar Energiek' },
-    { name: 'Jeroen', video: videoJeroen, subtitle: 'Super Trots op de Resultaten' },
-    { name: 'Transformatie', video: video15Kilo, subtitle: '15 Kilo Afvallen' },
+    { name: 'Jojanneke', video: videoJojanneke, poster: member1, subtitle: '13 Kilo Kwijt in 12 Weken' },
+    { name: 'Tonny', video: videoTonny, poster: member2, subtitle: 'Van 20 Kilo Overgewicht naar Energiek' },
+    { name: 'Jeroen', video: videoJeroen, poster: member3, subtitle: 'Super Trots op de Resultaten' },
+    { name: 'Transformatie', video: video15Kilo, poster: member4, subtitle: '15 Kilo Afvallen' },
 ]
 
 const testimonials = [
@@ -66,7 +71,7 @@ return
                     {items.map((item) => (
                         <div key={item.name} className="min-w-0 flex-[0_0_80%] sm:flex-[0_0_45%] md:flex-[0_0_calc(33.333%-16px)]">
                             <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
-                                <video className="aspect-[9/16] w-full object-cover" controls preload="metadata" playsInline>
+                                <video className="aspect-[9/16] w-full object-cover" controls preload="metadata" playsInline poster={item.poster}>
                                     <source src={item.video} type="video/mp4" />
                                     Je browser ondersteunt geen video.
                                 </video>
@@ -118,7 +123,7 @@ export default function TestimonialsSection() {
 
     return (
         <section ref={sectionRef} id="verhalen" className="bg-background py-20 md:py-32">
-            <div className="container px-4">
+            <div className="container mx-auto px-4">
                 <div className="mx-auto mb-16 max-w-3xl text-center">
                     <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">Succesverhalen</p>
                     <h2 className="section-title mb-6">

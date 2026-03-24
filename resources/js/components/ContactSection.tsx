@@ -41,7 +41,7 @@ export default function ContactSection() {
 
     return (
         <section ref={sectionRef} id="contact" className="bg-background py-20 md:py-32">
-            <div className="container px-4">
+            <div className="container mx-auto px-4">
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
                     <div className={`transition-all duration-700 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'}`}>
                         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">Neem Contact Op</p>
