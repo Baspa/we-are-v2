@@ -33,7 +33,7 @@ export default function TransformationSection() {
 
     return (
         <section ref={sectionRef} id="programma" className="bg-card py-20 md:py-32">
-            <div className="container px-4">
+            <div className="container mx-auto px-4">
                 <div className="mx-auto max-w-2xl">
                     <div className={`transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">

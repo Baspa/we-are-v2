@@ -42,7 +42,7 @@ export default function AtmosphereSection() {
 
     return (
         <section ref={sectionRef} className="overflow-hidden bg-background py-20 md:py-32">
-            <div className="container mb-12 px-4">
+            <div className="container mx-auto mb-12 px-4">
                 <div className="mx-auto max-w-3xl text-center">
                     <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">De WE ARE Ervaring</p>
                     <h2 className="section-title mb-6">
@@ -55,7 +55,7 @@ export default function AtmosphereSection() {
                 </div>
             </div>
 
-            <div className="container px-4">
+            <div className="container mx-auto px-4">
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                     <div className="flex flex-col gap-4">
                         <div

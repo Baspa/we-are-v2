@@ -281,7 +281,7 @@ export default function Resultaten() {
             {/* Hero */}
             <section className="relative overflow-hidden bg-background pb-20 pt-32 md:pb-28 md:pt-40">
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-                <div ref={hero.ref} className="container relative z-10 px-4">
+                <div ref={hero.ref} className="container mx-auto relative z-10 px-4">
                     <div className={`mx-auto max-w-4xl text-center transition-all duration-700 ${hero.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">Bewezen Resultaten</p>
                         <h1 className="section-title mb-6">
@@ -307,133 +307,133 @@ export default function Resultaten() {
 
             {/* Block 1: Voor & Na */}
             <section className="bg-card py-10 md:py-14">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <PhotoGrid photos={transformations.slice(0, 10)} isVisible={grid1.isVisible} refProp={grid1.ref} />
                 </div>
             </section>
 
             {/* Quote 1 */}
             <section className="bg-background">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <QuoteBanner quote={quotes[0]} isVisible={q1.isVisible} refProp={q1.ref} />
                 </div>
             </section>
 
             {/* Block 2: Leden met schijf */}
             <section className="bg-card py-10 md:py-14">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <MemberGrid photos={members.slice(0, 10)} isVisible={memberGrid1.isVisible} refProp={memberGrid1.ref} />
                 </div>
             </section>
 
             {/* Quote 2 */}
             <section className="bg-background">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <QuoteBanner quote={quotes[1]} isVisible={q2.isVisible} refProp={q2.ref} />
                 </div>
             </section>
 
             {/* Block 3: Voor & Na */}
             <section className="bg-card py-10 md:py-14">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <PhotoGrid photos={transformations.slice(10, 20)} isVisible={grid2.isVisible} refProp={grid2.ref} />
                 </div>
             </section>
 
             {/* Quote 3 */}
             <section className="bg-background">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <QuoteBanner quote={quotes[2]} isVisible={q3.isVisible} refProp={q3.ref} />
                 </div>
             </section>
 
             {/* Block 4: Leden met schijf */}
             <section className="bg-card py-10 md:py-14">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <MemberGrid photos={members.slice(10, 22)} isVisible={memberGrid2.isVisible} refProp={memberGrid2.ref} />
                 </div>
             </section>
 
             {/* Quote 4 */}
             <section className="bg-background">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <QuoteBanner quote={quotes[3]} isVisible={q4.isVisible} refProp={q4.ref} />
                 </div>
             </section>
 
             {/* Block 5: Voor & Na */}
             <section className="bg-card py-10 md:py-14">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <PhotoGrid photos={transformations.slice(20, 30)} isVisible={grid3.isVisible} refProp={grid3.ref} />
                 </div>
             </section>
 
             {/* Quote 5 */}
             <section className="bg-background">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <QuoteBanner quote={quotes[4]} isVisible={q5.isVisible} refProp={q5.ref} />
                 </div>
             </section>
 
             {/* Block 6: Leden met schijf */}
             <section className="bg-card py-10 md:py-14">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <MemberGrid photos={members.slice(22, 32)} isVisible={memberGrid3.isVisible} refProp={memberGrid3.ref} />
                 </div>
             </section>
 
             {/* Quote 6 */}
             <section className="bg-background">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <QuoteBanner quote={quotes[5]} isVisible={q6.isVisible} refProp={q6.ref} />
                 </div>
             </section>
 
             {/* Block 7: Voor & Na */}
             <section className="bg-card py-10 md:py-14">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <PhotoGrid photos={transformations.slice(30, 40)} isVisible={grid4.isVisible} refProp={grid4.ref} />
                 </div>
             </section>
 
             {/* Quote 7 */}
             <section className="bg-background">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <QuoteBanner quote={quotes[6]} isVisible={q7.isVisible} refProp={q7.ref} />
                 </div>
             </section>
 
             {/* Block 8: Leden met schijf */}
             <section className="bg-card py-10 md:py-14">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <MemberGrid photos={members.slice(32, 42)} isVisible={memberGrid4.isVisible} refProp={memberGrid4.ref} />
                 </div>
             </section>
 
             {/* Quote 8 */}
             <section className="bg-background">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <QuoteBanner quote={quotes[7]} isVisible={q8.isVisible} refProp={q8.ref} />
                 </div>
             </section>
 
             {/* Block 9: Voor & Na */}
             <section className="bg-card py-10 md:py-14">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <PhotoGrid photos={transformations.slice(40)} isVisible={grid5.isVisible} refProp={grid5.ref} />
                 </div>
             </section>
 
             {/* Quote 9 */}
             <section className="bg-background">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <QuoteBanner quote='"Samen sterker, samen verder"' isVisible={q9.isVisible} refProp={q9.ref} />
                 </div>
             </section>
 
             {/* Block 10: Nieuwe leden met schijf */}
             <section className="bg-card py-10 md:py-14">
-                <div className="container px-4">
+                <div className="container mx-auto px-4">
                     <MemberGrid photos={members.slice(42)} isVisible={memberGrid5.isVisible} refProp={memberGrid5.ref} />
                 </div>
             </section>

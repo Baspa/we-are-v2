@@ -22,7 +22,7 @@ export default function Contact() {
             {/* Hero */}
             <section className="relative overflow-hidden bg-background pb-16 pt-32 md:pb-24 md:pt-40">
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-                <div className="container relative z-10 px-4">
+                <div className="container mx-auto relative z-10 px-4">
                     <div className="grid items-center gap-12 md:grid-cols-2">
                         {/* Text */}
                         <div>

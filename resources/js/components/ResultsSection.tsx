@@ -86,7 +86,7 @@ export default function ResultsSection() {
 
     return (
         <section ref={sectionRef} id="resultaten" className="bg-card py-20 md:py-32">
-            <div className="container px-4">
+            <div className="container mx-auto px-4">
                 <div className="mx-auto mb-16 max-w-3xl text-center">
                     <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">Bewezen Resultaten</p>
                     <h2 className="section-title mb-6">

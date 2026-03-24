@@ -22,7 +22,7 @@ return null
 
     return (
         <div className="animate-fade-in-up fixed bottom-0 right-0 left-0 z-50 border-t border-border bg-background/95 p-4 backdrop-blur-md">
-            <div className="container px-4">
+            <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between gap-4">
                     <div className="hidden sm:block">
                         <p className="font-semibold text-foreground">Klaar voor jouw transformatie?</p>
