@@ -6,7 +6,7 @@
 /* WE ARE - Personal Training Design System
    Based on official brand guidelines (huisstijlmanual)
    Colors: #d4d328 (Yellow/Lemon) & #654093 (Purple/Violet)
-   Typography: Syne (headings) & Space Grotesk (body)
+   Typography: Changa One (headings) & Nunito Sans (body)
    Background: Black (stoer zwart)
    All colors MUST be HSL */
 
@@ -50,9 +50,9 @@
     --color-brand-black: hsl(0 0% 0%);
 
     /* Typography - Tailwind v4 fonts */
-    --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
-    --font-body: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-    --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Changa One', cursive;
+    --font-body: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
 
     /* Animations */
     --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
