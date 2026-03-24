@@ -19,6 +19,7 @@ export default defineConfig({
         tailwindcss(),
         wayfinder({
             formVariants: true,
+            php: '/Users/basvandinther/Library/Application Support/Herd/bin/php84',
         }),
     ],
 });

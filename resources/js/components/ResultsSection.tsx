@@ -5,16 +5,21 @@ import { useEffect, useRef, useState } from 'react'
 import transformation1 from '@/assets/transformation-1.jpg'
 import transformation2 from '@/assets/transformation-2.jpg'
 import transformation3 from '@/assets/transformation-3.jpg'
+import transformation4 from '@/assets/transformation-4.png'
+import transformation5 from '@/assets/transformation-5.jpg'
+import transformation6 from '@/assets/transformation-6.jpg'
+import transformation7 from '@/assets/transformation-7.jpg'
+import transformation8 from '@/assets/transformation-8.jpg'
+import transformation9 from '@/assets/transformation-9.png'
+import transformation10 from '@/assets/transformation-10.png'
 import transformation31 from '@/assets/transformation-31.jpg'
 import transformation32 from '@/assets/transformation-32.jpg'
 import transformation33 from '@/assets/transformation-33.jpg'
 import transformation34 from '@/assets/transformation-34.jpg'
 import transformation35 from '@/assets/transformation-35.jpg'
 import transformation36 from '@/assets/transformation-36.png'
-import transformation4 from '@/assets/transformation-4.png'
 import transformation40 from '@/assets/transformation-40.jpg'
 import transformation41 from '@/assets/transformation-41.png'
-import transformation5 from '@/assets/transformation-5.jpg'
 
 const transformations = [
     { id: 1, image: transformation1 },
@@ -29,7 +34,12 @@ const transformations = [
     { id: 5, image: transformation5 },
     { id: 41, image: transformation41 },
     { id: 32, image: transformation32 },
+    { id: 6, image: transformation6 },
     { id: 36, image: transformation36 },
+    { id: 7, image: transformation7 },
+    { id: 8, image: transformation8 },
+    { id: 9, image: transformation9 },
+    { id: 10, image: transformation10 },
 ]
 
 export default function ResultsSection() {

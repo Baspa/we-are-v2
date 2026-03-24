@@ -2,27 +2,15 @@ import { Head, Link } from '@inertiajs/react'
 import { TrendingUp, Star, Award, Users, ArrowRight, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
-import member1 from '@/assets/member-1.jpg'
-import member10 from '@/assets/member-10.jpg'
-import member11 from '@/assets/member-11.jpg'
-import member12 from '@/assets/member-12.jpg'
-import member13 from '@/assets/member-13.jpg'
-import member14 from '@/assets/member-14.jpg'
-import member15 from '@/assets/member-15.jpg'
-import member16 from '@/assets/member-16.jpg'
-import member17 from '@/assets/member-17.jpg'
-import member18 from '@/assets/member-18.jpg'
-import member19 from '@/assets/member-19.jpg'
-import member2 from '@/assets/member-2.jpg'
-import member20 from '@/assets/member-20.jpg'
-import member3 from '@/assets/member-3.jpg'
-import member4 from '@/assets/member-4.jpg'
-import member5 from '@/assets/member-5.jpg'
-import member6 from '@/assets/member-6.jpg'
-import member7 from '@/assets/member-7.jpg'
-import member8 from '@/assets/member-8.jpg'
-import member9 from '@/assets/member-9.jpg'
 import transformation1 from '@/assets/transformation-1.jpg'
+import transformation2 from '@/assets/transformation-2.jpg'
+import transformation3 from '@/assets/transformation-3.jpg'
+import transformation4 from '@/assets/transformation-4.png'
+import transformation5 from '@/assets/transformation-5.jpg'
+import transformation6 from '@/assets/transformation-6.jpg'
+import transformation7 from '@/assets/transformation-7.jpg'
+import transformation8 from '@/assets/transformation-8.jpg'
+import transformation9 from '@/assets/transformation-9.png'
 import transformation10 from '@/assets/transformation-10.png'
 import transformation11 from '@/assets/transformation-11.jpg'
 import transformation12 from '@/assets/transformation-12.jpg'
@@ -33,15 +21,91 @@ import transformation16 from '@/assets/transformation-16.jpg'
 import transformation17 from '@/assets/transformation-17.jpg'
 import transformation18 from '@/assets/transformation-18.png'
 import transformation19 from '@/assets/transformation-19.png'
-import transformation2 from '@/assets/transformation-2.jpg'
 import transformation20 from '@/assets/transformation-20.jpg'
-import transformation3 from '@/assets/transformation-3.jpg'
-import transformation4 from '@/assets/transformation-4.png'
-import transformation5 from '@/assets/transformation-5.jpg'
-import transformation6 from '@/assets/transformation-6.jpg'
-import transformation7 from '@/assets/transformation-7.jpg'
-import transformation8 from '@/assets/transformation-8.jpg'
-import transformation9 from '@/assets/transformation-9.png'
+import transformation21 from '@/assets/transformation-21.jpg'
+import transformation22 from '@/assets/transformation-22.jpg'
+import transformation23 from '@/assets/transformation-23.jpg'
+import transformation24 from '@/assets/transformation-24.jpg'
+import transformation25 from '@/assets/transformation-25.jpg'
+import transformation26 from '@/assets/transformation-26.jpg'
+import transformation27 from '@/assets/transformation-27.jpg'
+import transformation28 from '@/assets/transformation-28.jpg'
+import transformation29 from '@/assets/transformation-29.jpg'
+import transformation30 from '@/assets/transformation-30.jpg'
+import transformation31 from '@/assets/transformation-31.jpg'
+import transformation32 from '@/assets/transformation-32.jpg'
+import transformation33 from '@/assets/transformation-33.jpg'
+import transformation34 from '@/assets/transformation-34.jpg'
+import transformation35 from '@/assets/transformation-35.jpg'
+import transformation36 from '@/assets/transformation-36.png'
+import transformation37 from '@/assets/transformation-37.jpg'
+import transformation38 from '@/assets/transformation-38.jpg'
+import transformation39 from '@/assets/transformation-39.jpg'
+import transformation42 from '@/assets/transformation-42.jpg'
+import transformation43 from '@/assets/transformation-43.jpg'
+import transformation44 from '@/assets/transformation-44.jpg'
+import transformation45 from '@/assets/transformation-45.png'
+import transformation46 from '@/assets/transformation-46.jpg'
+import transformation47 from '@/assets/transformation-47.jpg'
+import transformation48 from '@/assets/transformation-48.jpg'
+import transformation49 from '@/assets/transformation-49.jpg'
+import transformation50 from '@/assets/transformation-50.jpg'
+import transformation51 from '@/assets/transformation-51.png'
+import transformation52 from '@/assets/transformation-52.png'
+import transformation53 from '@/assets/transformation-53.jpg'
+import transformation54 from '@/assets/transformation-54.png'
+
+import member1 from '@/assets/member-1.jpg'
+import member2 from '@/assets/member-2.jpg'
+import member3 from '@/assets/member-3.jpg'
+import member4 from '@/assets/member-4.jpg'
+import member5 from '@/assets/member-5.jpg'
+import member6 from '@/assets/member-6.jpg'
+import member7 from '@/assets/member-7.jpg'
+import member8 from '@/assets/member-8.jpg'
+import member9 from '@/assets/member-9.jpg'
+import member10 from '@/assets/member-10.jpg'
+import member11 from '@/assets/member-11.jpg'
+import member12 from '@/assets/member-12.jpg'
+import member13 from '@/assets/member-13.jpg'
+import member14 from '@/assets/member-14.jpg'
+import member15 from '@/assets/member-15.jpg'
+import member16 from '@/assets/member-16.jpg'
+import member17 from '@/assets/member-17.jpg'
+import member18 from '@/assets/member-18.jpg'
+import member19 from '@/assets/member-19.jpg'
+import member20 from '@/assets/member-20.jpg'
+import member21 from '@/assets/member-21.jpg'
+import member22 from '@/assets/member-22.jpg'
+import member23 from '@/assets/member-23.jpg'
+import member24 from '@/assets/member-24.jpg'
+import member25 from '@/assets/member-25.jpg'
+import member26 from '@/assets/member-26.jpg'
+import member27 from '@/assets/member-27.jpg'
+import member28 from '@/assets/member-28.jpg'
+import member29 from '@/assets/member-29.jpg'
+import member30 from '@/assets/member-30.jpg'
+import member31 from '@/assets/member-31.jpg'
+import member32 from '@/assets/member-32.jpg'
+import member33 from '@/assets/member-33.jpg'
+import member34 from '@/assets/member-34.jpg'
+import member35 from '@/assets/member-35.jpg'
+import member36 from '@/assets/member-36.jpg'
+import member37 from '@/assets/member-37.jpg'
+import member38 from '@/assets/member-38.jpg'
+import member39 from '@/assets/member-39.jpg'
+import member40 from '@/assets/member-40.jpg'
+import member41 from '@/assets/member-41.jpg'
+import member42 from '@/assets/member-42.jpg'
+import member43 from '@/assets/member-43.jpg'
+import member44 from '@/assets/member-44.jpg'
+import member45 from '@/assets/member-45.jpg'
+import member46 from '@/assets/member-46.jpg'
+import member47 from '@/assets/member-47.jpg'
+import member48 from '@/assets/member-48.jpg'
+import member49 from '@/assets/member-49.jpg'
+import member50 from '@/assets/member-50.jpg'
+
 import InlineContactForm from '@/components/InlineContactForm'
 import MainLayout from '@/layouts/MainLayout'
 
@@ -50,6 +114,14 @@ const transformations = [
     transformation6, transformation7, transformation8, transformation9, transformation10,
     transformation11, transformation12, transformation13, transformation14, transformation15,
     transformation16, transformation17, transformation18, transformation19, transformation20,
+    transformation21, transformation22, transformation23, transformation24, transformation25,
+    transformation26, transformation27, transformation28, transformation29, transformation30,
+    transformation31, transformation32, transformation33, transformation34, transformation35,
+    transformation36, transformation37, transformation38, transformation39,
+    transformation42, transformation43, transformation44, transformation45,
+    transformation46, transformation47, transformation48, transformation49,
+    transformation50, transformation51,
+    transformation52, transformation53, transformation54,
 ]
 
 const members = [
@@ -57,6 +129,13 @@ const members = [
     member6, member7, member8, member9, member10,
     member11, member12, member13, member14, member15,
     member16, member17, member18, member19, member20,
+    member21, member22, member23, member24, member25,
+    member26, member27, member28, member29, member30,
+    member31, member32, member33, member34, member35,
+    member36, member37, member38, member39, member40,
+    member41, member42,
+    member43, member44, member45, member46, member47,
+    member48, member49, member50,
 ]
 
 const quotes = [
@@ -64,6 +143,10 @@ const quotes = [
     '"Sterker dan je ooit voor mogelijk hield"',
     '"Geen excuses meer, alleen resultaten"',
     '"Dit is pas het begin van jouw verhaal"',
+    '"Jouw lichaam kan meer dan je denkt"',
+    '"Elke stap telt, elke kilo vertelt"',
+    '"Vandaag begin je, morgen ben je trots"',
+    '"De beste investering is in jezelf"',
 ]
 
 const stats = [
@@ -80,13 +163,13 @@ const useScrollReveal = () => {
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
-setIsVisible(true)
-}
+                setIsVisible(true)
+            }
         }, { threshold: 0.1 })
 
         if (ref.current) {
-observer.observe(ref.current)
-}
+            observer.observe(ref.current)
+        }
 
         return () => observer.disconnect()
     }, [])
@@ -160,15 +243,26 @@ export default function Resultaten() {
         return () => clearTimeout(timer)
     }, [])
 
-    const { ref: heroRef, isVisible: heroVisible } = useScrollReveal()
-    const { ref: grid1Ref, isVisible: grid1Visible } = useScrollReveal()
-    const { ref: q1Ref, isVisible: q1Visible } = useScrollReveal()
-    const { ref: memberGrid1Ref, isVisible: memberGrid1Visible } = useScrollReveal()
-    const { ref: q2Ref, isVisible: q2Visible } = useScrollReveal()
-    const { ref: grid2Ref, isVisible: grid2Visible } = useScrollReveal()
-    const { ref: q3Ref, isVisible: q3Visible } = useScrollReveal()
-    const { ref: memberGrid2Ref, isVisible: memberGrid2Visible } = useScrollReveal()
-    const { ref: q4Ref, isVisible: q4Visible } = useScrollReveal()
+    const hero = useScrollReveal()
+    const grid1 = useScrollReveal()
+    const q1 = useScrollReveal()
+    const memberGrid1 = useScrollReveal()
+    const q2 = useScrollReveal()
+    const grid2 = useScrollReveal()
+    const q3 = useScrollReveal()
+    const memberGrid2 = useScrollReveal()
+    const q4 = useScrollReveal()
+    const grid3 = useScrollReveal()
+    const q5 = useScrollReveal()
+    const memberGrid3 = useScrollReveal()
+    const q6 = useScrollReveal()
+    const grid4 = useScrollReveal()
+    const q7 = useScrollReveal()
+    const memberGrid4 = useScrollReveal()
+    const q8 = useScrollReveal()
+    const grid5 = useScrollReveal()
+    const q9 = useScrollReveal()
+    const memberGrid5 = useScrollReveal()
 
     return (
         <MainLayout>
@@ -187,8 +281,8 @@ export default function Resultaten() {
             {/* Hero */}
             <section className="relative overflow-hidden bg-background pb-20 pt-32 md:pb-28 md:pt-40">
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-                <div ref={heroRef} className="container relative z-10 px-4">
-                    <div className={`mx-auto max-w-4xl text-center transition-all duration-700 ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                <div ref={hero.ref} className="container relative z-10 px-4">
+                    <div className={`mx-auto max-w-4xl text-center transition-all duration-700 ${hero.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-primary">Bewezen Resultaten</p>
                         <h1 className="section-title mb-6">
                             <span className="text-primary">1000+</span> Levens Veranderd
@@ -199,7 +293,7 @@ export default function Resultaten() {
                     </div>
 
                     {/* Stats */}
-                    <div className={`mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-4 transition-all delay-300 duration-700 md:grid-cols-4 md:gap-6 ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+                    <div className={`mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-4 transition-all delay-300 duration-700 md:grid-cols-4 md:gap-6 ${hero.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                         {stats.map((stat) => (
                             <div key={stat.label} className="rounded-xl border border-border bg-card p-6 text-center">
                                 <stat.icon className="mx-auto mb-3 h-6 w-6 text-primary" />
@@ -214,56 +308,133 @@ export default function Resultaten() {
             {/* Block 1: Voor & Na */}
             <section className="bg-card py-10 md:py-14">
                 <div className="container px-4">
-                    <PhotoGrid photos={transformations.slice(0, 10)} isVisible={grid1Visible} refProp={grid1Ref} />
+                    <PhotoGrid photos={transformations.slice(0, 10)} isVisible={grid1.isVisible} refProp={grid1.ref} />
                 </div>
             </section>
 
             {/* Quote 1 */}
             <section className="bg-background">
                 <div className="container px-4">
-                    <QuoteBanner quote={quotes[0]} isVisible={q1Visible} refProp={q1Ref} />
+                    <QuoteBanner quote={quotes[0]} isVisible={q1.isVisible} refProp={q1.ref} />
                 </div>
             </section>
 
             {/* Block 2: Leden met schijf */}
             <section className="bg-card py-10 md:py-14">
                 <div className="container px-4">
-                    <MemberGrid photos={members.slice(0, 10)} isVisible={memberGrid1Visible} refProp={memberGrid1Ref} />
+                    <MemberGrid photos={members.slice(0, 10)} isVisible={memberGrid1.isVisible} refProp={memberGrid1.ref} />
                 </div>
             </section>
 
             {/* Quote 2 */}
             <section className="bg-background">
                 <div className="container px-4">
-                    <QuoteBanner quote={quotes[1]} isVisible={q2Visible} refProp={q2Ref} />
+                    <QuoteBanner quote={quotes[1]} isVisible={q2.isVisible} refProp={q2.ref} />
                 </div>
             </section>
 
             {/* Block 3: Voor & Na */}
             <section className="bg-card py-10 md:py-14">
                 <div className="container px-4">
-                    <PhotoGrid photos={transformations.slice(10, 20)} isVisible={grid2Visible} refProp={grid2Ref} />
+                    <PhotoGrid photos={transformations.slice(10, 20)} isVisible={grid2.isVisible} refProp={grid2.ref} />
                 </div>
             </section>
 
             {/* Quote 3 */}
             <section className="bg-background">
                 <div className="container px-4">
-                    <QuoteBanner quote={quotes[2]} isVisible={q3Visible} refProp={q3Ref} />
+                    <QuoteBanner quote={quotes[2]} isVisible={q3.isVisible} refProp={q3.ref} />
                 </div>
             </section>
 
             {/* Block 4: Leden met schijf */}
             <section className="bg-card py-10 md:py-14">
                 <div className="container px-4">
-                    <MemberGrid photos={members.slice(10, 20)} isVisible={memberGrid2Visible} refProp={memberGrid2Ref} />
+                    <MemberGrid photos={members.slice(10, 22)} isVisible={memberGrid2.isVisible} refProp={memberGrid2.ref} />
                 </div>
             </section>
 
             {/* Quote 4 */}
             <section className="bg-background">
                 <div className="container px-4">
-                    <QuoteBanner quote={quotes[3]} isVisible={q4Visible} refProp={q4Ref} />
+                    <QuoteBanner quote={quotes[3]} isVisible={q4.isVisible} refProp={q4.ref} />
+                </div>
+            </section>
+
+            {/* Block 5: Voor & Na */}
+            <section className="bg-card py-10 md:py-14">
+                <div className="container px-4">
+                    <PhotoGrid photos={transformations.slice(20, 30)} isVisible={grid3.isVisible} refProp={grid3.ref} />
+                </div>
+            </section>
+
+            {/* Quote 5 */}
+            <section className="bg-background">
+                <div className="container px-4">
+                    <QuoteBanner quote={quotes[4]} isVisible={q5.isVisible} refProp={q5.ref} />
+                </div>
+            </section>
+
+            {/* Block 6: Leden met schijf */}
+            <section className="bg-card py-10 md:py-14">
+                <div className="container px-4">
+                    <MemberGrid photos={members.slice(22, 32)} isVisible={memberGrid3.isVisible} refProp={memberGrid3.ref} />
+                </div>
+            </section>
+
+            {/* Quote 6 */}
+            <section className="bg-background">
+                <div className="container px-4">
+                    <QuoteBanner quote={quotes[5]} isVisible={q6.isVisible} refProp={q6.ref} />
+                </div>
+            </section>
+
+            {/* Block 7: Voor & Na */}
+            <section className="bg-card py-10 md:py-14">
+                <div className="container px-4">
+                    <PhotoGrid photos={transformations.slice(30, 40)} isVisible={grid4.isVisible} refProp={grid4.ref} />
+                </div>
+            </section>
+
+            {/* Quote 7 */}
+            <section className="bg-background">
+                <div className="container px-4">
+                    <QuoteBanner quote={quotes[6]} isVisible={q7.isVisible} refProp={q7.ref} />
+                </div>
+            </section>
+
+            {/* Block 8: Leden met schijf */}
+            <section className="bg-card py-10 md:py-14">
+                <div className="container px-4">
+                    <MemberGrid photos={members.slice(32, 42)} isVisible={memberGrid4.isVisible} refProp={memberGrid4.ref} />
+                </div>
+            </section>
+
+            {/* Quote 8 */}
+            <section className="bg-background">
+                <div className="container px-4">
+                    <QuoteBanner quote={quotes[7]} isVisible={q8.isVisible} refProp={q8.ref} />
+                </div>
+            </section>
+
+            {/* Block 9: Voor & Na */}
+            <section className="bg-card py-10 md:py-14">
+                <div className="container px-4">
+                    <PhotoGrid photos={transformations.slice(40)} isVisible={grid5.isVisible} refProp={grid5.ref} />
+                </div>
+            </section>
+
+            {/* Quote 9 */}
+            <section className="bg-background">
+                <div className="container px-4">
+                    <QuoteBanner quote='"Samen sterker, samen verder"' isVisible={q9.isVisible} refProp={q9.ref} />
+                </div>
+            </section>
+
+            {/* Block 10: Nieuwe leden met schijf */}
+            <section className="bg-card py-10 md:py-14">
+                <div className="container px-4">
+                    <MemberGrid photos={members.slice(42)} isVisible={memberGrid5.isVisible} refProp={memberGrid5.ref} />
                 </div>
             </section>
 
