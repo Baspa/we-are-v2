@@ -7,16 +7,16 @@ import videoJeroen from '@/assets/testimonial-jeroen.mp4'
 import videoJojanneke from '@/assets/testimonial-jojanneke.mp4'
 import videoTonny from '@/assets/testimonial-tonny.mp4'
 
-import member1 from '@/assets/member-1.jpg'
-import member2 from '@/assets/member-2.jpg'
-import member3 from '@/assets/member-3.jpg'
-import member4 from '@/assets/member-4.jpg'
+import posterJeroen from '@/assets/poster-jeroen.jpg'
+import posterJojanneke from '@/assets/poster-jojanneke.jpg'
+import posterPatrick from '@/assets/poster-patrick.jpg'
+import posterTonny from '@/assets/poster-tonny.jpg'
 
 const videoTestimonials = [
-    { name: 'Jojanneke', video: videoJojanneke, poster: member1, subtitle: '13 Kilo Kwijt in 12 Weken' },
-    { name: 'Tonny', video: videoTonny, poster: member2, subtitle: 'Van 20 Kilo Overgewicht naar Energiek' },
-    { name: 'Jeroen', video: videoJeroen, poster: member3, subtitle: 'Super Trots op de Resultaten' },
-    { name: 'Transformatie', video: video15Kilo, poster: member4, subtitle: '15 Kilo Afvallen' },
+    { name: 'Jojanneke', video: videoJojanneke, poster: posterJojanneke, subtitle: '13 Kilo Kwijt in 12 Weken' },
+    { name: 'Tonny', video: videoTonny, poster: posterTonny, subtitle: 'Van 20 Kilo Overgewicht naar Energiek' },
+    { name: 'Jeroen', video: videoJeroen, poster: posterJeroen, subtitle: 'Super Trots op de Resultaten' },
+    { name: 'Patrick', video: video15Kilo, poster: posterPatrick, subtitle: '15 Kilo Afvallen' },
 ]
 
 const testimonials = [
