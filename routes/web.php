@@ -19,6 +19,7 @@ Route::inertia('/locatie-uden', 'LocatieUden')->name('locatie.uden');
 Route::inertia('/locatie-schijndel', 'LocatieSchijndel')->name('locatie.schijndel');
 Route::inertia('/contact', 'Contact')->name('contact');
 Route::inertia('/abonnement', 'Abonnement')->name('abonnement');
+Route::inertia('/gratis-download', 'GratisDownload')->name('gratis-download');
 
 /*
 |--------------------------------------------------------------------------
