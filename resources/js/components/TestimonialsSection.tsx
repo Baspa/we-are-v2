@@ -2,15 +2,15 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useEffect, useRef, useState, useCallback } from 'react'
 
+import posterJeroen from '@/assets/poster-jeroen.jpg'
+import posterJojanneke from '@/assets/poster-jojanneke.jpg'
+import posterPatrick from '@/assets/poster-patrick.jpg'
+import posterTonny from '@/assets/poster-tonny.jpg'
 import video15Kilo from '@/assets/testimonial-15kilo.mp4'
 import videoJeroen from '@/assets/testimonial-jeroen.mp4'
 import videoJojanneke from '@/assets/testimonial-jojanneke.mp4'
 import videoTonny from '@/assets/testimonial-tonny.mp4'
 
-import posterJeroen from '@/assets/poster-jeroen.jpg'
-import posterJojanneke from '@/assets/poster-jojanneke.jpg'
-import posterPatrick from '@/assets/poster-patrick.jpg'
-import posterTonny from '@/assets/poster-tonny.jpg'
 
 const videoTestimonials = [
     { name: 'Jojanneke', video: videoJojanneke, poster: posterJojanneke, subtitle: '13 Kilo Kwijt in 12 Weken' },

@@ -3,10 +3,10 @@ import { Download, CheckCircle, XCircle, Star, Users, Clock, ArrowRight, Award, 
 import { useEffect, useRef, useState } from 'react'
 import ebookAuthor from '@/assets/ebook-author.webp'
 import ebookCover from '@/assets/ebook-cover.webp'
-import ebookFront from '@/assets/ebook-front.webp'
-import ebookInside from '@/assets/ebook-inside.webp'
 import ebookDiary from '@/assets/ebook-diary.webp'
 import ebookDumbbell from '@/assets/ebook-dumbbell.webp'
+import ebookFront from '@/assets/ebook-front.webp'
+import ebookInside from '@/assets/ebook-inside.webp'
 import MainLayout from '@/layouts/MainLayout'
 
 const useScrollReveal = () => {
@@ -37,6 +37,7 @@ export default function GratisDownload() {
     const [achternaam, setAchternaam] = useState('')
     const [email, setEmail] = useState('')
     const [submitted, setSubmitted] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     const hero = useScrollReveal()
     const video = useScrollReveal()
@@ -48,19 +49,54 @@ export default function GratisDownload() {
     const author = useScrollReveal()
     const form = useScrollReveal()
 
-    const handleDownload = (e: React.FormEvent) => {
+    const handleDownload = async (e: React.FormEvent) => {
         e.preventDefault()
-        if (!naam || !achternaam || !email) return
 
-        // Direct download the PDF
-        const link = document.createElement('a')
-        link.href = '/downloads/ebook-succesvol-afvallen.pdf'
-        link.download = 'Succesvol Afvallen zonder Voedingsschema - WE ARE.pdf'
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
+        if (!naam || !achternaam || !email) {
+return
+}
 
-        setSubmitted(true)
+        setIsLoading(true)
+
+        try {
+            // Get CSRF token
+            const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content')
+
+            // POST to backend to save lead to CRM
+            const response = await fetch('/gratisdownload', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken || '',
+                },
+                body: JSON.stringify({ naam, achternaam, email }),
+            })
+
+            const data = await response.json()
+
+            // Trigger the download
+            const link = document.createElement('a')
+            link.href = data.download_url || '/downloads/ebook-succesvol-afvallen.pdf'
+            link.download = 'Succesvol Afvallen zonder Voedingsschema - WE ARE.pdf'
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+
+            setSubmitted(true)
+        } catch (error) {
+            console.error('Error:', error)
+            // Still allow download even if request fails
+            const link = document.createElement('a')
+            link.href = '/downloads/ebook-succesvol-afvallen.pdf'
+            link.download = 'Succesvol Afvallen zonder Voedingsschema - WE ARE.pdf'
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+            setSubmitted(true)
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     const scrollToForm = () => {
@@ -438,9 +474,13 @@ export default function GratisDownload() {
                                     />
                                 </div>
 
-                                <button type="submit" className="btn-hero flex w-full items-center justify-center gap-2">
+                                <button
+                                    type="submit"
+                                    disabled={isLoading}
+                                    className="btn-hero flex w-full items-center justify-center gap-2 disabled:opacity-50"
+                                >
                                     <Download className="h-5 w-5" />
-                                    Download gratis e-book
+                                    {isLoading ? 'Bezig met downloaden...' : 'Download gratis e-book'}
                                 </button>
 
                                 <p className="text-center text-sm text-muted-foreground">

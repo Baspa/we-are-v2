@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EbookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ Route::inertia('/locatie-schijndel', 'LocatieSchijndel')->name('locatie.schijnde
 Route::inertia('/contact', 'Contact')->name('contact');
 Route::inertia('/abonnement', 'Abonnement')->name('abonnement');
 Route::inertia('/gratisdownload', 'GratisDownload')->name('gratisdownload');
+Route::post('/gratisdownload', [EbookController::class, 'download'])->name('ebook.download');
 
 /*
 |--------------------------------------------------------------------------
