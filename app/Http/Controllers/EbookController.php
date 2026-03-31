@@ -13,7 +13,7 @@ class EbookController extends Controller
      * Mailing list ID for ebook downloads (leadmagnet).
      */
     private const MAILING_LIST_EBOOK = 6;
-fix 
+
     public function download(Request $request)
     {
         $validated = $request->validate([
