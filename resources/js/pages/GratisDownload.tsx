@@ -52,11 +52,14 @@ export default function GratisDownload() {
         e.preventDefault()
         if (!naam || !achternaam || !email) return
 
-        const subject = encodeURIComponent('E-book download aanvraag')
-        const body = encodeURIComponent(
-            `Naam: ${naam} ${achternaam}\nE-mail: ${email}\n\nIk wil graag het gratis e-book 'Succesvol Afvallen zonder Voedingsschema' ontvangen.`
-        )
-        window.location.href = `mailto:brayen@we-are.club?subject=${subject}&body=${body}`
+        // Direct download the PDF
+        const link = document.createElement('a')
+        link.href = '/downloads/ebook-succesvol-afvallen.pdf'
+        link.download = 'Succesvol Afvallen zonder Voedingsschema - WE ARE.pdf'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+
         setSubmitted(true)
     }
 
@@ -393,7 +396,7 @@ export default function GratisDownload() {
                                 <CheckCircle className="mx-auto mb-4 h-16 w-16 text-primary" />
                                 <h3 className="mb-2 text-2xl font-bold">Bedankt!</h3>
                                 <p className="text-muted-foreground">
-                                    Je e-mail wordt geopend. Stuur het bericht en je ontvangt het e-book zo snel mogelijk.
+                                    Je download is gestart! Check je Downloads map voor het e-book.
                                 </p>
                             </div>
                         ) : (
