@@ -81,10 +81,10 @@ export default function GratisDownload() {
                     content="Download gratis het e-book 'Succesvol Afvallen zonder Voedingsschema'. Ontdek waarom diëten niet werken."
                 />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://we-are.club/gratis-download" />
+                <meta property="og:url" content="https://we-are.club/gratisdownload" />
                 <meta property="og:locale" content="nl_NL" />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://we-are.club/gratis-download" />
+                <link rel="canonical" href="https://we-are.club/gratisdownload" />
             </Head>
 
             {/* HERO */}
