@@ -194,7 +194,7 @@ return
                         </h2>
                         <div className="overflow-hidden rounded-lg border border-border shadow-xl">
                             <video controls className="aspect-video w-full" poster={ebookFront}>
-                                <source src="/videos/ebook-promo.mp4" type="video/mp4" />
+                                <source src="https://we-are.ams3.digitaloceanspaces.com/ebook-promo.mp4" type="video/mp4" />
                                 Je browser ondersteunt geen video.
                             </video>
                         </div>

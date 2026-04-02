@@ -83,7 +83,7 @@ export default function OnderhoudPlus() {
                             <div className="overflow-hidden rounded-lg border border-border">
                                 <video controls className="aspect-video w-full" poster="">
                                     <source
-                                        src="/videos/onderhoud-plus-intro.mp4"
+                                        src="https://we-are.ams3.digitaloceanspaces.com/onderhoud-plus-intro.mp4"
                                         type="video/mp4"
                                     />
                                     Je browser ondersteunt geen video.

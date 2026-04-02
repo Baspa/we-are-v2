@@ -6,10 +6,10 @@ import posterJeroen from '@/assets/poster-jeroen.jpg'
 import posterJojanneke from '@/assets/poster-jojanneke.jpg'
 import posterPatrick from '@/assets/poster-patrick.jpg'
 import posterTonny from '@/assets/poster-tonny.jpg'
-import video15Kilo from '@/assets/testimonial-15kilo.mp4'
-import videoJeroen from '@/assets/testimonial-jeroen.mp4'
-import videoJojanneke from '@/assets/testimonial-jojanneke.mp4'
-import videoTonny from '@/assets/testimonial-tonny.mp4'
+const video15Kilo = 'https://we-are.ams3.digitaloceanspaces.com/testimonial-15kilo.mp4'
+const videoJeroen = 'https://we-are.ams3.digitaloceanspaces.com/testimonial-jeroen.mp4'
+const videoJojanneke = 'https://we-are.ams3.digitaloceanspaces.com/testimonial-jojanneke.mp4'
+const videoTonny = 'https://we-are.ams3.digitaloceanspaces.com/testimonial-tonny.mp4'
 
 
 const videoTestimonials = [
