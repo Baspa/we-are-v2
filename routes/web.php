@@ -22,6 +22,8 @@ Route::inertia('/contact', 'Contact')->name('contact');
 Route::inertia('/abonnement', 'Abonnement')->name('abonnement');
 Route::inertia('/gratisdownload', 'GratisDownload')->name('gratisdownload');
 Route::post('/gratisdownload', [EbookController::class, 'download'])->name('ebook.download');
+Route::inertia('/intake', 'Intake')->name('intake');
+Route::inertia('/onderhoud-plus', 'OnderhoudPlus')->name('onderhoud-plus');
 
 /*
 |--------------------------------------------------------------------------
