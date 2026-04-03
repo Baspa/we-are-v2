@@ -37,7 +37,7 @@ const fadeUp = {
 
 export default function Intake() {
     return (
-        <MainLayout>
+        <MainLayout showNavigation={false} showFooter={false} showStickyCTA={false}>
             <Head title="Voorbereiding Intakegesprek | De Transformatie Formule®">
                 <meta
                     name="description"

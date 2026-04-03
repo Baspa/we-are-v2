@@ -7,12 +7,13 @@ import { Toaster } from '@/components/ui/sonner'
 interface MainLayoutProps {
     showStickyCTA?: boolean
     showFooter?: boolean
+    showNavigation?: boolean
 }
 
-export default function MainLayout({ children, showStickyCTA = true, showFooter = true }: PropsWithChildren<MainLayoutProps>) {
+export default function MainLayout({ children, showStickyCTA = true, showFooter = true, showNavigation = true }: PropsWithChildren<MainLayoutProps>) {
     return (
         <div className="min-h-screen bg-background text-foreground">
-            <Navigation />
+            {showNavigation && <Navigation />}
             <main>{children}</main>
             {showFooter && <Footer />}
             {showStickyCTA && <StickyCTA />}

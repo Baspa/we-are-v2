@@ -12,7 +12,7 @@ export default function OnderhoudPlus() {
     }
 
     return (
-        <MainLayout>
+        <MainLayout showNavigation={false} showFooter={false} showStickyCTA={false}>
             <Head title="Onderhoud+ | WE ARE Personal Training">
                 <meta
                     name="description"
