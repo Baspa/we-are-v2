@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EbookController;
 use Illuminate\Support\Facades\Route;
@@ -33,3 +34,12 @@ Route::inertia('/onderhoud-plus', 'OnderhoudPlus')->name('onderhoud-plus');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/contact/bedankt', [ContactController::class, 'thanks'])->name('contact.thanks');
+
+/*
+|--------------------------------------------------------------------------
+| Blog
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blogs/{slug}', [BlogController::class, 'show'])->name('blogs.show');
