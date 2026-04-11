@@ -68,6 +68,11 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/blogs" className="text-muted-foreground transition-colors hover:text-primary">
+                                    Blog
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/faq" className="text-muted-foreground transition-colors hover:text-primary">
                                     Veelgestelde Vragen
                                 </Link>

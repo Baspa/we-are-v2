@@ -20,6 +20,7 @@ export default function Navigation() {
         { href: '/waarom', label: 'Waarom WE ARE' },
         { href: '/resultaten', label: 'Resultaten' },
         { href: '/transformatieformule', label: 'De Transformatie Formule' },
+        { href: '/blogs', label: 'Blog' },
         { href: '/contact', label: 'Contact' },
     ]
 

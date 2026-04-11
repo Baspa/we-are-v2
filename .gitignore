@@ -26,4 +26,5 @@ yarn-error.log
 /.vscode
 /.zed
 temp-videos/
+/public/assets/blog
 .DS_Store
