@@ -19,7 +19,9 @@ class BlogController extends Controller
     {
         $blog = Blogs::findBySlug($slug);
 
-        abort_unless($blog, 404);
+        if (! $blog) {
+            abort(404);
+        }
 
         return Inertia::render("Blog/{$blog['component']}", [
             'blog' => $blog,
