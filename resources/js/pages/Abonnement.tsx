@@ -84,21 +84,21 @@ return 'price'
         if (abonnement === 'premium' && trainingType === 'personal') {
             const prices: Record<number, string> = { 1: '€325', 2: '€625', 3: '€870', 4: '€1.120' }
 
-            return prices[frequentie!] + ' per maand'
+            return prices[frequentie!] + ' per vier weken'
         }
 
         if (abonnement === 'premium' && trainingType === 'duo') {
             const prices: Record<number, string> = { 1: '€265', 2: '€525', 3: '€715', 4: '€885' }
 
-            return prices[frequentie!] + ' per persoon per maand'
+            return prices[frequentie!] + ' per persoon per vier weken'
         }
 
         if (abonnement === 'onderhoud_plus') {
-            return frequentie === 1 ? '€175 per maand' : '€350 per maand'
+            return frequentie === 1 ? '€175 per vier weken' : '€325 per vier weken'
         }
 
         if (abonnement === 'onderhoud') {
-            return contract === 'maandelijks' ? '€70 per maand' : '€67,50 per maand'
+            return contract === 'maandelijks' ? '€70 per vier weken' : '€67,50 per vier weken'
         }
 
         return ''

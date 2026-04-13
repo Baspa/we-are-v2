@@ -508,6 +508,118 @@ export default function Intake() {
                     </div>
                 </section>
 
+                {/* TARIEVEN */}
+                <section className="py-20 md:py-28">
+                    <div className="container mx-auto max-w-4xl px-4">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: '-50px' }}
+                            variants={fadeUp}
+                            className="mb-14 text-center"
+                        >
+                            <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                                <Award className="h-4 w-4" />
+                                Investering
+                            </span>
+                            <h2 className="mb-6 text-3xl font-extrabold md:text-5xl">
+                                Jouw <span className="text-primary">investering</span>
+                            </h2>
+                            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+                                Twee instapopties die passen bij jouw situatie en budget.
+                            </p>
+                        </motion.div>
+
+                        <div className="grid gap-8 md:grid-cols-2">
+                            <motion.div
+                                className="relative rounded-xl border-2 border-primary/40 bg-card p-8"
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                variants={fadeUp}
+                                custom={0}
+                            >
+                                <div className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
+                                    Meest gekozen
+                                </div>
+                                <h3 className="mb-2 text-xl font-extrabold text-foreground">3 Termijnen</h3>
+                                <p className="mb-6 text-sm text-muted-foreground">
+                                    12 weken intensieve begeleiding, betaal gespreid in 3 termijnen.
+                                </p>
+                                <div className="mb-6">
+                                    <span className="text-4xl font-extrabold text-primary">€445</span>
+                                    <span className="text-lg text-muted-foreground"> / per vier weken</span>
+                                </div>
+                                <p className="text-sm text-muted-foreground">
+                                    Vanaf tarief — exacte investering bespreken we tijdens het intakegesprek.
+                                </p>
+                            </motion.div>
+
+                            <motion.div
+                                className="relative rounded-xl border border-border bg-card p-8"
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                variants={fadeUp}
+                                custom={1}
+                            >
+                                <h3 className="mb-2 text-xl font-extrabold text-foreground">Jaarprogramma</h3>
+                                <p className="mb-6 text-sm text-muted-foreground">
+                                    12 weken intensieve training + 40 weken onderhoud. Een heel jaar begeleiding.
+                                </p>
+                                <div className="mb-6">
+                                    <span className="text-4xl font-extrabold text-primary">€175</span>
+                                    <span className="text-lg text-muted-foreground"> / per vier weken</span>
+                                </div>
+                                <p className="text-sm text-muted-foreground">
+                                    Vanaf tarief — inclusief intensieve fase én onderhoudsprogramma.
+                                </p>
+                            </motion.div>
+
+                            <motion.div
+                                className="relative rounded-xl border border-border bg-card p-8"
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                variants={fadeUp}
+                                custom={2}
+                            >
+                                <h3 className="mb-2 text-xl font-extrabold text-foreground">Onderhoud</h3>
+                                <p className="mb-6 text-sm text-muted-foreground">
+                                    Behoud je resultaat na de intensieve fase met ons onderhoudsprogramma.
+                                </p>
+                                <div className="mb-6">
+                                    <span className="text-4xl font-extrabold text-primary">€67,50</span>
+                                    <span className="text-lg text-muted-foreground"> / per vier weken</span>
+                                </div>
+                                <p className="text-sm text-muted-foreground">
+                                    Vanaf tarief — beschikbaar na afronding van je transformatie.
+                                </p>
+                            </motion.div>
+                        </div>
+
+                        <motion.div
+                            className="mx-auto mt-10 max-w-2xl rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                            custom={3}
+                        >
+                            <div className="mb-4 flex items-center justify-center gap-3">
+                                <Shield className="h-6 w-6 text-primary" />
+                                <h3 className="text-xl font-extrabold text-foreground">
+                                    Resultaat garantie: geen risico&apos;s
+                                </h3>
+                            </div>
+                            <p className="leading-relaxed text-muted-foreground">
+                                Doe jij alles wat het plan je voorschrijft en behaal je 0,0 resultaat? Dan ontvang je je
+                                geld terug.
+                            </p>
+                        </motion.div>
+                    </div>
+                </section>
+
                 {/* MEMBERS ONLY — RETAIN */}
                 <section className="py-20 md:py-28">
                     <div className="container mx-auto max-w-4xl px-4">
@@ -825,6 +937,65 @@ export default function Intake() {
                                 De meeste mensen komen daar niet eens.
                             </p>
                         </motion.div>
+                    </div>
+                </section>
+
+                {/* VRAGEN TER VOORBEREIDING */}
+                <section className="relative overflow-hidden py-20 md:py-28">
+                    <div className="absolute inset-0 bg-gradient-to-b from-secondary/10 via-background to-background" />
+                    <div className="container relative z-10 mx-auto max-w-3xl px-4">
+                        <motion.div
+                            className="mb-12 text-center"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: '-50px' }}
+                            variants={fadeUp}
+                        >
+                            <h2 className="mb-4 text-3xl font-extrabold md:text-5xl">
+                                Vragen ter <span className="text-primary">voorbereiding</span>
+                            </h2>
+                            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                                Deze en nog enkele andere vragen stellen we aan het begin van onze
+                                kennismaking om te kijken of we een match zijn.
+                            </p>
+                        </motion.div>
+
+                        <div className="mx-auto max-w-2xl space-y-6">
+                            {[
+                                {
+                                    number: '01',
+                                    question:
+                                        'Waar zit jouw grootste frustratie op dit moment?',
+                                },
+                                {
+                                    number: '02',
+                                    question:
+                                        'Welk probleem komt elke keer weer opnieuw terug waardoor het tot nu toe niet is gelukt om te slagen?',
+                                },
+                                {
+                                    number: '03',
+                                    question:
+                                        'Wat zouden voor jou redenen zijn om niet te starten?',
+                                },
+                            ].map((item, i) => (
+                                <motion.div
+                                    key={i}
+                                    className="flex items-start gap-5 rounded-2xl border border-border/50 bg-card p-6"
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={fadeUp}
+                                    custom={i}
+                                >
+                                    <span className="mt-1 text-3xl font-extrabold leading-none text-primary/30">
+                                        {item.number}
+                                    </span>
+                                    <p className="text-lg font-medium leading-relaxed text-foreground">
+                                        {item.question}
+                                    </p>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </section>
 
