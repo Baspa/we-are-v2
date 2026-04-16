@@ -291,7 +291,7 @@ export default function Intake() {
                                 },
                                 {
                                     phase: 'Fase 4',
-                                    title: 'Retain',
+                                    title: 'Onderhoud',
                                     desc: 'Resultaat behouden. Exclusief onderhoudsprogramma voor wie het verdient.',
                                     icon: Shield,
                                     weeks: 'Week 12+',
@@ -525,12 +525,16 @@ export default function Intake() {
                             <h2 className="mb-6 text-3xl font-extrabold md:text-5xl">
                                 Jouw <span className="text-primary">investering</span>
                             </h2>
-                            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-                                Twee instapopties die passen bij jouw situatie en budget.
+                            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                                Echte verandering begint bij het aanleren van nieuwe gewoontes.
+                                Wetenschappelijk onderzoek laat zien dat het gemiddeld 84 dagen duurt
+                                om een gewoonte écht te verankeren. Daarom duurt De Transformatie
+                                Formule minimaal 12 weken: zodat je nieuwe leefstijl niet tijdelijk
+                                is, maar blijvend onderdeel van wie je bent.
                             </p>
                         </motion.div>
 
-                        <div className="grid gap-8 md:grid-cols-2">
+                        <div className="mx-auto grid max-w-xl gap-8 md:grid-cols-1">
                             <motion.div
                                 className="relative rounded-xl border-2 border-primary/40 bg-card p-8"
                                 initial="hidden"
@@ -563,16 +567,18 @@ export default function Intake() {
                                 variants={fadeUp}
                                 custom={1}
                             >
-                                <h3 className="mb-2 text-xl font-extrabold text-foreground">Jaarprogramma</h3>
+                                <h3 className="mb-2 text-xl font-extrabold text-foreground">Onderhoud+</h3>
                                 <p className="mb-6 text-sm text-muted-foreground">
-                                    12 weken intensieve training + 40 weken onderhoud. Een heel jaar begeleiding.
+                                    Behouden van je resultaten met 1 of 2 keer per week begeleid
+                                    sporten. Alleen te kiezen na het afronden van De Transformatie
+                                    Formule.
                                 </p>
                                 <div className="mb-6">
-                                    <span className="text-4xl font-extrabold text-primary">€175</span>
+                                    <span className="text-4xl font-extrabold text-primary">vanaf €175</span>
                                     <span className="text-lg text-muted-foreground"> / per vier weken</span>
                                 </div>
                                 <p className="text-sm text-muted-foreground">
-                                    Vanaf tarief — inclusief intensieve fase én onderhoudsprogramma.
+                                    Vanaf tarief — exacte investering bespreken we tijdens het intakegesprek.
                                 </p>
                             </motion.div>
 
@@ -586,14 +592,16 @@ export default function Intake() {
                             >
                                 <h3 className="mb-2 text-xl font-extrabold text-foreground">Onderhoud</h3>
                                 <p className="mb-6 text-sm text-muted-foreground">
-                                    Behoud je resultaat na de intensieve fase met ons onderhoudsprogramma.
+                                    Zelfstandig trainen in onze studio met toegang tot faciliteiten en
+                                    community. Alleen te kiezen na het afronden van De Transformatie
+                                    Formule.
                                 </p>
                                 <div className="mb-6">
-                                    <span className="text-4xl font-extrabold text-primary">€67,50</span>
+                                    <span className="text-4xl font-extrabold text-primary">vanaf €67,50</span>
                                     <span className="text-lg text-muted-foreground"> / per vier weken</span>
                                 </div>
                                 <p className="text-sm text-muted-foreground">
-                                    Vanaf tarief — beschikbaar na afronding van je transformatie.
+                                    Vanaf tarief — exacte investering bespreken we tijdens het intakegesprek.
                                 </p>
                             </motion.div>
                         </div>
@@ -636,7 +644,7 @@ export default function Intake() {
                             </div>
                             <h2 className="mb-6 text-3xl font-extrabold md:text-5xl">
                                 Na de transformatie:{' '}
-                                <span className="text-primary">Retain</span>
+                                <span className="text-primary">Onderhoud</span>
                             </h2>
                             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
                                 Blijvend resultaat vraagt om een omgeving die je scherp houdt. Dit
@@ -723,7 +731,7 @@ export default function Intake() {
                                     sub: 'Succesvol begeleid in Uden & Schijndel',
                                 },
                                 {
-                                    value: '5.0/5',
+                                    value: '5/5',
                                     label: 'Google Reviews',
                                     sub: 'Op basis van 274 Google Reviews',
                                 },
@@ -745,7 +753,7 @@ export default function Intake() {
                             ))}
                         </motion.div>
 
-                        {/* Google Reviews */}
+                        {/* Google Reviews Widget */}
                         <motion.div
                             initial="hidden"
                             whileInView="visible"
@@ -763,77 +771,33 @@ export default function Intake() {
                                     ))}
                                 </div>
                                 <span className="font-semibold text-foreground">
-                                    5.0 op Google · 274 reviews
+                                    5/5 op Google
                                 </span>
                             </div>
 
-                            <div className="grid gap-6 text-left md:grid-cols-3">
-                                {[
-                                    {
-                                        name: 'Janneke V.',
-                                        text: 'Ik ben zo blij dat ik de stap heb gezet. Na jaren alles zelf proberen, heb ik hier in 12 weken meer resultaat behaald dan in 5 jaar. De begeleiding is persoonlijk en professioneel. Brayen is een topcoach!',
-                                        ago: '3 weken geleden',
-                                    },
-                                    {
-                                        name: 'Roy D.',
-                                        text: 'Als drukke ondernemer dacht ik dat ik geen tijd had voor sport. WE ARE liet me zien dat het juist wél past in mijn agenda. De structuur en coaching hebben mijn leven veranderd.',
-                                        ago: '1 maand geleden',
-                                    },
-                                    {
-                                        name: 'Linda M.',
-                                        text: 'Na mijn zwangerschap voelde ik me niet meer lekker in mijn lichaam. Bij WE ARE voelde ik me meteen begrepen. Geen oordeel, alleen support. 14 kilo kwijt en zoveel meer zelfvertrouwen!',
-                                        ago: '2 maanden geleden',
-                                    },
-                                    {
-                                        name: 'Patrick S.',
-                                        text: 'De combinatie van physical en mental coaching maakt dit echt uniek. Ze kijken niet alleen naar je training maar ook naar je mindset, voeding en leefstijl. Absolute aanrader.',
-                                        ago: '3 maanden geleden',
-                                    },
-                                    {
-                                        name: 'Femke B.',
-                                        text: 'Ik had al zoveel diëten geprobeerd. Hier leerde ik eindelijk hoe het wél werkt, zonder mezelf gek te maken. Het team is oprecht betrokken en de sfeer is fantastisch.',
-                                        ago: '1 maand geleden',
-                                    },
-                                    {
-                                        name: 'Stefan K.',
-                                        text: 'Professioneel, persoonlijk en resultaatgericht. In 12 weken fitter dan ik me in jaren heb gevoeld. En het mooiste: ik weet nu hoe ik het volhoud. Top team!',
-                                        ago: '2 weken geleden',
-                                    },
-                                ].map((review, i) => (
-                                    <motion.div
-                                        key={i}
-                                        className="rounded-xl border border-border bg-background p-5"
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ once: true }}
-                                        variants={fadeUp}
-                                        custom={i * 0.2}
-                                    >
-                                        <div className="mb-2 flex">
-                                            {[...Array(5)].map((_, j) => (
-                                                <Star
-                                                    key={j}
-                                                    className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                                                />
-                                            ))}
-                                        </div>
-                                        <p className="mb-3 text-sm text-muted-foreground">
-                                            "{review.text}"
-                                        </p>
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-sm font-semibold text-foreground">
-                                                {review.name}
-                                            </span>
-                                            <span className="text-xs text-muted-foreground">
-                                                {review.ago}
-                                            </span>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
+                            <div
+                                className="review-widget-wrapper"
+                                ref={(el) => {
+                                    if (el && !el.querySelector('script')) {
+                                        const script = document.createElement('script')
+                                        script.src =
+                                            'https://embed.mylocalbusiness.io/widgets/production/latest/widgets.js'
+                                        script.setAttribute('data-my-widget', 'carousel')
+                                        script.setAttribute(
+                                            'data-business-id',
+                                            '69ddbc1b629a68a47cd3c171'
+                                        )
+                                        script.setAttribute(
+                                            'data-location-id',
+                                            '69ddbca9629a68a47cd3c174'
+                                        )
+                                        el.appendChild(script)
+                                    }
+                                }}
+                            />
 
                             <a
-                                href="https://www.google.com/search?q=WE+ARE+personal+training+reviews"
+                                href="https://www.google.com/search?sa=X&sca_esv=483bff7be855fde4&sxsrf=ANbL-n7ZHknOxtFAfPg6DjIR37hsieGCVw:1775128556506&q=WE+ARE+-+your+physical+and+mental+personal+training+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDIzMTOxMDExMTY2tjSxNDC1MN7AyPiK0TrcVcExyFVBV6Eyv7RIoSCjsjgzOTFHITEvRSE3Na8EyCxILSrOzwMySooSM_My89IVglLLMlPLixexUqIbADG5Vk-XAAAA&rldimm=12646484443339490583&tbm=lcl&hl=nl-NL&ved=2ahUKEwiO9qmYhc-TAxWp5AIHHUadINEQ9fQKegQIZhAG&biw=1422&bih=739&dpr=1.35#lkt=LocalPoiReviews"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="mt-8 inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-primary/80"
