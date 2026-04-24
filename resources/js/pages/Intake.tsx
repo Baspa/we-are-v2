@@ -18,12 +18,15 @@ import {
 } from 'lucide-react'
 
 import brayenImg from '@/assets/brayen-intake.webp'
+import intakeGroupThumbsup from '@/assets/intake-group-thumbsup.jpg'
+import intakeMemberFlowers from '@/assets/intake-member-flowers.jpg'
 import intakeTeam1 from '@/assets/intake-team-1.webp'
 import intakeTeam2 from '@/assets/intake-team-2.webp'
 import intakeTeam3 from '@/assets/intake-team-3.webp'
 import intakeTeam4 from '@/assets/intake-team-4.webp'
 import intakeTeam5 from '@/assets/intake-team-5.webp'
 import intakeTeam6 from '@/assets/intake-team-6.webp'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import MainLayout from '@/layouts/MainLayout'
 
 const fadeUp = {
@@ -508,6 +511,248 @@ export default function Intake() {
                     </div>
                 </section>
 
+                {/* TEAM & SFEER FOTO'S */}
+                <section className="py-20 md:py-28">
+                    <div className="container mx-auto max-w-5xl px-4 text-center">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                        >
+                            <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
+                                Deel van het <span className="text-primary">WE ARE team</span>
+                            </h2>
+                            <p className="mx-auto mb-12 max-w-2xl text-lg text-muted-foreground">
+                                Bij WE ARE ben je geen nummer. Je wordt onderdeel van een hecht
+                                team dat samen traint, groeit en resultaat boekt.
+                            </p>
+                        </motion.div>
+                        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+                            {[
+                                intakeTeam1,
+                                intakeTeam2,
+                                intakeTeam3,
+                                intakeTeam4,
+                                intakeTeam5,
+                                intakeTeam6,
+                                intakeMemberFlowers,
+                                intakeGroupThumbsup,
+                            ].map((img, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={fadeUp}
+                                    custom={i}
+                                    className="aspect-square overflow-hidden rounded-xl"
+                                >
+                                    <img
+                                        src={img}
+                                        alt={`WE ARE team moment ${i + 1}`}
+                                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                                    />
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* SOCIAL PROOF + GOOGLE REVIEWS */}
+                <section className="bg-card py-20 md:py-28">
+                    <div className="container mx-auto max-w-4xl px-4 text-center">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: '-50px' }}
+                            variants={fadeUp}
+                        >
+                            <h2 className="mb-4 text-3xl font-extrabold md:text-5xl">
+                                Echte mensen.{' '}
+                                <span className="text-primary">Echte resultaten.</span>
+                            </h2>
+                            <p className="mx-auto mb-14 max-w-2xl text-lg text-muted-foreground">
+                                Wij werken met data en bewezen methodes. Dit zeggen onze leden op
+                                Google (5.0 ★ — 274 reviews).
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            className="mb-14 grid grid-cols-3 gap-6"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                            custom={1}
+                        >
+                            {[
+                                {
+                                    value: '1000+',
+                                    label: 'Transformaties',
+                                    sub: 'Succesvol begeleid in Uden & Schijndel',
+                                },
+                                {
+                                    value: '5/5',
+                                    label: 'Google Reviews',
+                                    sub: 'Op basis van 274 Google Reviews',
+                                },
+                                {
+                                    value: '100%',
+                                    label: 'Toewijding',
+                                    sub: 'Alles draait om jou!',
+                                },
+                            ].map((stat, i) => (
+                                <div key={i} className="text-center">
+                                    <p className="text-3xl font-extrabold text-primary md:text-4xl">
+                                        {stat.value}
+                                    </p>
+                                    <p className="mt-1 text-sm font-semibold text-foreground">
+                                        {stat.label}
+                                    </p>
+                                    <p className="mt-1 text-xs text-muted-foreground">{stat.sub}</p>
+                                </div>
+                            ))}
+                        </motion.div>
+
+                        {/* Google Reviews Widget */}
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                            custom={2}
+                        >
+                            <div className="mb-8 flex items-center justify-center gap-2">
+                                <div className="flex">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star
+                                            key={i}
+                                            className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                                        />
+                                    ))}
+                                </div>
+                                <span className="font-semibold text-foreground">
+                                    5/5 op Google
+                                </span>
+                            </div>
+
+                            <div
+                                className="review-widget-wrapper"
+                                ref={(el) => {
+                                    if (el && !el.querySelector('script')) {
+                                        const script = document.createElement('script')
+                                        script.src =
+                                            'https://embed.mylocalbusiness.io/widgets/production/latest/widgets.js'
+                                        script.setAttribute('data-my-widget', 'carousel')
+                                        script.setAttribute(
+                                            'data-business-id',
+                                            '69ddbc1b629a68a47cd3c171'
+                                        )
+                                        script.setAttribute(
+                                            'data-location-id',
+                                            '69ddbca9629a68a47cd3c174'
+                                        )
+                                        el.appendChild(script)
+                                    }
+                                }}
+                            />
+
+                            <a
+                                href="https://www.google.com/search?sa=X&sca_esv=483bff7be855fde4&sxsrf=ANbL-n7ZHknOxtFAfPg6DjIR37hsieGCVw:1775128556506&q=WE+ARE+-+your+physical+and+mental+personal+training+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDIzMTOxMDExMTY2tjSxNDC1MN7AyPiK0TrcVcExyFVBV6Eyv7RIoSCjsjgzOTFHITEvRSE3Na8EyCxILSrOzwMySooSM_My89IVglLLMlPLixexUqIbADG5Vk-XAAAA&rldimm=12646484443339490583&tbm=lcl&hl=nl-NL&ved=2ahUKEwiO9qmYhc-TAxWp5AIHHUadINEQ9fQKegQIZhAG&biw=1422&bih=739&dpr=1.35#lkt=LocalPoiReviews"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-8 inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-primary/80"
+                            >
+                                Bekijk alle reviews op Google →
+                            </a>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* BEZWAREN ONTKRACHTEN / FAQ */}
+                <section className="bg-card/30 py-20 md:py-28">
+                    <div className="container mx-auto max-w-3xl px-4">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                            className="mb-12 text-center"
+                        >
+                            <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
+                                Twijfels? <span className="text-primary">Wij snappen het.</span>
+                            </h2>
+                            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+                                De meest gestelde vragen, eerlijk beantwoord — zodat jij met een gerust
+                                hart kunt starten.
+                            </p>
+                        </motion.div>
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                        >
+                            <Accordion type="single" collapsible className="space-y-4">
+                                <AccordionItem
+                                    value="conditie"
+                                    className="rounded-xl border border-border bg-background/50 px-6"
+                                >
+                                    <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">
+                                        Kan ik dit ook doen wanneer mijn conditie slecht is?
+                                    </AccordionTrigger>
+                                    <AccordionContent className="text-base text-muted-foreground">
+                                        Ja, juist dán! Daar gaan we samen aan werken. We starten op
+                                        jouw niveau en bouwen stap voor stap op. Een slechte conditie
+                                        is geen drempel — het is precies de reden om te beginnen.
+                                    </AccordionContent>
+                                </AccordionItem>
+                                <AccordionItem
+                                    value="gezin"
+                                    className="rounded-xl border border-border bg-background/50 px-6"
+                                >
+                                    <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">
+                                        Is dit wel te combineren met een gezinsleven?
+                                    </AccordionTrigger>
+                                    <AccordionContent className="text-base text-muted-foreground">
+                                        Ja, absoluut. Veel van onze leden hebben een druk gezinsleven.
+                                        We plannen je trainingen op momenten die passen bij jouw
+                                        agenda — zo blijft er tijd voor wat écht belangrijk is.
+                                    </AccordionContent>
+                                </AccordionItem>
+                                <AccordionItem
+                                    value="afspraken"
+                                    className="rounded-xl border border-border bg-background/50 px-6"
+                                >
+                                    <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">
+                                        Ik heb nog wat afspraken staan waar ik niet onderuit kom. Hoe los ik dat op?
+                                    </AccordionTrigger>
+                                    <AccordionContent className="text-base text-muted-foreground">
+                                        Geen probleem. Onze trainers helpen je om resultaat te halen
+                                        ondanks die afspraken. Je moet het uiteindelijk ook op de
+                                        lange termijn vol kunnen houden — het echte leven hoort er
+                                        gewoon bij.
+                                    </AccordionContent>
+                                </AccordionItem>
+                                <AccordionItem
+                                    value="aansluitend"
+                                    className="rounded-xl border border-border bg-background/50 px-6"
+                                >
+                                    <AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">
+                                        Moeten de eerste 12 weken aansluitend zijn?
+                                    </AccordionTrigger>
+                                    <AccordionContent className="text-base text-muted-foreground">
+                                        Nee, dat hoeft niet. Er zal altijd wel een vakantie of
+                                        mogelijk griep tussendoor komen. Dat vormt geen probleem — we
+                                        passen het traject aan waar nodig.
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                        </motion.div>
+                    </div>
+                </section>
+
                 {/* TARIEVEN */}
                 <section className="py-20 md:py-28">
                     <div className="container mx-auto max-w-4xl px-4">
@@ -546,12 +791,13 @@ export default function Intake() {
                                 <div className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
                                     Meest gekozen
                                 </div>
-                                <h3 className="mb-2 text-xl font-extrabold text-foreground">3 Termijnen</h3>
+                                <h3 className="mb-2 text-xl font-extrabold text-foreground">De Transformatie Formule</h3>
                                 <p className="mb-6 text-sm text-muted-foreground">
-                                    12 weken intensieve begeleiding, betaal gespreid in 3 termijnen.
+                                    12 weken intensieve begeleiding. All-in prijs, geen verborgen extra
+                                    kosten. - Minimaal 3 termijnen
                                 </p>
                                 <div className="mb-6">
-                                    <span className="text-4xl font-extrabold text-primary">€445</span>
+                                    <span className="text-4xl font-extrabold text-primary">vanaf €445</span>
                                     <span className="text-lg text-muted-foreground"> / per vier weken</span>
                                 </div>
                                 <p className="text-sm text-muted-foreground">
@@ -697,162 +943,7 @@ export default function Intake() {
                     </div>
                 </section>
 
-                {/* SOCIAL PROOF + GOOGLE REVIEWS */}
-                <section className="bg-card py-20 md:py-28">
-                    <div className="container mx-auto max-w-4xl px-4 text-center">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: '-50px' }}
-                            variants={fadeUp}
-                        >
-                            <h2 className="mb-4 text-3xl font-extrabold md:text-5xl">
-                                Echte mensen.{' '}
-                                <span className="text-primary">Echte resultaten.</span>
-                            </h2>
-                            <p className="mx-auto mb-14 max-w-2xl text-lg text-muted-foreground">
-                                Wij werken met data en bewezen methodes. Dit zeggen onze leden op
-                                Google (5.0 ★ — 274 reviews).
-                            </p>
-                        </motion.div>
 
-                        <motion.div
-                            className="mb-14 grid grid-cols-3 gap-6"
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={fadeUp}
-                            custom={1}
-                        >
-                            {[
-                                {
-                                    value: '1000+',
-                                    label: 'Transformaties',
-                                    sub: 'Succesvol begeleid in Uden & Schijndel',
-                                },
-                                {
-                                    value: '5/5',
-                                    label: 'Google Reviews',
-                                    sub: 'Op basis van 274 Google Reviews',
-                                },
-                                {
-                                    value: '100%',
-                                    label: 'Toewijding',
-                                    sub: 'Alles draait om jou!',
-                                },
-                            ].map((stat, i) => (
-                                <div key={i} className="text-center">
-                                    <p className="text-3xl font-extrabold text-primary md:text-4xl">
-                                        {stat.value}
-                                    </p>
-                                    <p className="mt-1 text-sm font-semibold text-foreground">
-                                        {stat.label}
-                                    </p>
-                                    <p className="mt-1 text-xs text-muted-foreground">{stat.sub}</p>
-                                </div>
-                            ))}
-                        </motion.div>
-
-                        {/* Google Reviews Widget */}
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={fadeUp}
-                            custom={2}
-                        >
-                            <div className="mb-8 flex items-center justify-center gap-2">
-                                <div className="flex">
-                                    {[...Array(5)].map((_, i) => (
-                                        <Star
-                                            key={i}
-                                            className="h-5 w-5 fill-yellow-400 text-yellow-400"
-                                        />
-                                    ))}
-                                </div>
-                                <span className="font-semibold text-foreground">
-                                    5/5 op Google
-                                </span>
-                            </div>
-
-                            <div
-                                className="review-widget-wrapper"
-                                ref={(el) => {
-                                    if (el && !el.querySelector('script')) {
-                                        const script = document.createElement('script')
-                                        script.src =
-                                            'https://embed.mylocalbusiness.io/widgets/production/latest/widgets.js'
-                                        script.setAttribute('data-my-widget', 'carousel')
-                                        script.setAttribute(
-                                            'data-business-id',
-                                            '69ddbc1b629a68a47cd3c171'
-                                        )
-                                        script.setAttribute(
-                                            'data-location-id',
-                                            '69ddbca9629a68a47cd3c174'
-                                        )
-                                        el.appendChild(script)
-                                    }
-                                }}
-                            />
-
-                            <a
-                                href="https://www.google.com/search?sa=X&sca_esv=483bff7be855fde4&sxsrf=ANbL-n7ZHknOxtFAfPg6DjIR37hsieGCVw:1775128556506&q=WE+ARE+-+your+physical+and+mental+personal+training+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDIzMTOxMDExMTY2tjSxNDC1MN7AyPiK0TrcVcExyFVBV6Eyv7RIoSCjsjgzOTFHITEvRSE3Na8EyCxILSrOzwMySooSM_My89IVglLLMlPLixexUqIbADG5Vk-XAAAA&rldimm=12646484443339490583&tbm=lcl&hl=nl-NL&ved=2ahUKEwiO9qmYhc-TAxWp5AIHHUadINEQ9fQKegQIZhAG&biw=1422&bih=739&dpr=1.35#lkt=LocalPoiReviews"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-8 inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-primary/80"
-                            >
-                                Bekijk alle reviews op Google →
-                            </a>
-                        </motion.div>
-                    </div>
-                </section>
-
-                {/* TEAM & SFEER FOTO'S */}
-                <section className="py-20 md:py-28">
-                    <div className="container mx-auto max-w-5xl px-4 text-center">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={fadeUp}
-                        >
-                            <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
-                                Deel van het <span className="text-primary">WE ARE team</span>
-                            </h2>
-                            <p className="mx-auto mb-12 max-w-2xl text-lg text-muted-foreground">
-                                Bij WE ARE ben je geen nummer. Je wordt onderdeel van een hecht
-                                team dat samen traint, groeit en resultaat boekt.
-                            </p>
-                        </motion.div>
-                        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-                            {[
-                                intakeTeam1,
-                                intakeTeam2,
-                                intakeTeam3,
-                                intakeTeam4,
-                                intakeTeam5,
-                                intakeTeam6,
-                            ].map((img, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true }}
-                                    variants={fadeUp}
-                                    custom={i}
-                                    className="aspect-square overflow-hidden rounded-xl"
-                                >
-                                    <img
-                                        src={img}
-                                        alt={`WE ARE team moment ${i + 1}`}
-                                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                                    />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
 
                 {/* FOMO & EXCLUSIVITEIT */}
                 <section className="py-20 md:py-28">
