@@ -128,17 +128,17 @@ export default function Intake() {
                             {[
                                 {
                                     icon: Dumbbell,
-                                    title: 'Physical Training',
-                                    desc: 'Personal, Duo & Small Group training op maat.',
+                                    title: 'Fysieke Training',
+                                    desc: 'Personal, Duo & Small Group training op maat. 2, 3 of 4x per week.',
                                 },
                                 {
                                     icon: Brain,
-                                    title: 'Mental Coaching',
+                                    title: 'Rust in het hoofd',
                                     desc: 'Mindset-coaching die de echte verandering aandrijft.',
                                 },
                                 {
                                     icon: Heart,
-                                    title: 'Community',
+                                    title: 'Veilig en Vertrouwd',
                                     desc: 'Trainen tussen gelijkgestemden die elkaar sterker maken.',
                                 },
                             ].map((item, i) => (
@@ -460,33 +460,23 @@ export default function Intake() {
                             {[
                                 {
                                     icon: Brain,
-                                    title: 'Gebouwd op gedragsverandering',
+                                    title: 'Gebouwd op de wetenschap over gedragsverandering',
                                     desc: 'Niet alleen fysiek trainen, maar je gedrag en mindset fundamenteel veranderen.',
-                                },
-                                {
-                                    icon: Target,
-                                    title: 'Jouw unieke plan',
-                                    desc: "Geen standaard schema's. Alles op maat voor jouw situatie, doelen en belastbaarheid.",
                                 },
                                 {
                                     icon: TrendingUp,
                                     title: 'Sturing op data',
-                                    desc: 'Wij meten alles: vetpercentage, spiermassa, kracht. Data liegt niet.',
+                                    desc: 'Niet op emoties maar op cijfers! Wij meten alles: vetpercentage, spiermassa, kracht. Data liegt niet.',
                                 },
                                 {
                                     icon: CheckCircle,
-                                    title: 'Voor iedereen haalbaar',
-                                    desc: 'Als wij een match zien, garanderen wij dat het plan haalbaar is voor jouw agenda.',
-                                },
-                                {
-                                    icon: Users,
-                                    title: 'Community die begrijpt',
-                                    desc: 'Trainen tussen gelijkgestemden in een veilige omgeving die motiveert.',
+                                    title: 'Resultaat garantie',
+                                    desc: 'Behaal jij geen enkele kilo, centimeter of conditie in jouw resultaat? Dan krijg je jouw investering terug!',
                                 },
                                 {
                                     icon: Lock,
-                                    title: 'Exclusieve Retain fase',
-                                    desc: 'Nazorgtraject om je resultaat voor altijd vast te houden na de transformatie.',
+                                    title: 'Onderhouden van je resultaten',
+                                    desc: 'Wij helpen je niet alleen te behalen maar ook te behouden. Nazorgtraject om je resultaat vast te houden.',
                                 },
                             ].map((item, i) => (
                                 <motion.div
